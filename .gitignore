@@ -1,3 +1,6 @@
+# Ignore .env file which contains private info
 .env
 
+# Ignore node_modules folder as dependencies 
+# can be installed with "npm install"
 node_modules

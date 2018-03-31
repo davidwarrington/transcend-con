@@ -19,12 +19,16 @@
   "homepage": "https://github.com/davidwarrington/transcend-con#readme",
   "dependencies": {
     "dotenv": "^5.0.1",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "pug": "^2.0.3"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "bootstrap": "^4.0.0",
-    "browser-sync": "^2.23.6",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-babel": "^7.0.1",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^3.2.1",
     "jquery": "^3.3.1",
