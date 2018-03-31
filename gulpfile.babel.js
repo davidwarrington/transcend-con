@@ -7,9 +7,6 @@ import babel from 'gulp-babel';
 import concat from 'gulp-concat';
 import sass from 'gulp-sass';
 
-import browserify from 'browserify';
-import source from 'vinyl-source-stream';
-
 /**
  * Import properties from the gulp config
  * 
@@ -66,7 +63,6 @@ gulp.task('js', () => {
                .pipe(babel({
                    presets: ['env']
                }))
-               .transform(browserify)
                .pipe(gulp.dest(`${assets}/js`));
 });
 
