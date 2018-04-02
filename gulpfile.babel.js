@@ -33,7 +33,7 @@ import { assets, npm, src } from './gulp.config.json';
  * into the assets directory.
  */
 gulp.task('sass', () => {
-    return gulp.src(`${src}/sass/main.sass`)
+    return gulp.src(`${src}/sass/main.scss`)
                .pipe(sass({
                    style: 'expanded',
                }))
