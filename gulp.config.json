@@ -1,5 +1,5 @@
 {
     "assets": "./assets",
     "npm": "./node_modules",
-    "src": "./src"
+    "src": "src"
 }

@@ -1,0 +1,10 @@
+if student
+    - var slug = student.slug
+else
+    -var slug = 'new_student'
+- var action = `/admin/students/${slug}/save`
+form(action=action)
+    for input in form
+        +form-input(input)
+
+    button.btn.btn-primary(type="submit") Save Changes

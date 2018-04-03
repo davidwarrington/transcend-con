@@ -1,0 +1,37 @@
+mixin form-input(input)
+    .form-group
+        //- .replace() is passed two values, a 
+        //- regExp that matches all instances of 
+        //- ' ' within a string, and replaces
+        //- them with an underscore. This is done 
+        //- to ensure valid id and label attributes.
+        - var label = input.label.toLowerCase().replace(/ /g, '_');
+        unless input.type === 'heading'
+            label(for=label)= input.label
+        else
+            h4= input.label
+        
+        if input.type === 'textarea'
+            textarea.form-control(name=label id=label rows="6")= input.value
+        else if input.type === 'file'
+            input.form-control-file(type=input.type name=label id=label value=input.value)
+        else if input.type === 'select'
+            select.form-control(type=input.type name=label id=label value=input.value)
+                for option in input.options
+                    option(value=option.value)= option.label
+        else
+            input.form-control(type=input.type name=label id=label value=input.value)
+
+        if input.description
+            small.form-text.text-muted= input.description
+
+        if input.type === 'file'
+            p Current Image:
+            - var url = `assets/img/${input.value}`
+            img.w-100(src=url, alt=input.alt)
+
+    if input.type === 'file' && input.request_alt
+        .form-group
+            - var alt_label = `${label}_alt`
+            label(for=alt_label)= `Image Description`
+            input.form-control(type="text" name=alt_label id=alt_label value=input.alt)

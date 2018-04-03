@@ -1,0 +1,9 @@
+.btn-logout {
+    @include button-variant($red, $red);
+
+    align-items: center;
+    border-radius: 0;
+    display: flex;
+    padding-left: $btn-padding--dash;
+    padding-right: $btn-padding--dash;
+}

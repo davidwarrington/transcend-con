@@ -60,9 +60,9 @@ gulp.task('js', () => {
                     `${src}/js/scripts.js`
                 ])
                .pipe(concat('scripts.js'))
-               .pipe(babel({
-                   presets: ['env']
-               }))
+            //    .pipe(babel({
+            //        presets: ['env']
+            //    }))
                .pipe(gulp.dest(`${assets}/js`));
 });
 

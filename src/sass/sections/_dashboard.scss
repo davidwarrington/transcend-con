@@ -1,0 +1,64 @@
+.dash-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 0;
+}
+
+.dash-header {
+    background: gray('700');
+    color: $white;
+    
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.dash-welcome {
+    align-self: center;
+    margin: 0;
+}
+
+.dash-content {
+    flex: 1;
+    position: relative;
+
+    .row {
+        bottom: 0;
+        left: 15px;
+        position: absolute; 
+        right: 15px;
+        top: 0;
+    }
+}
+
+.dash-nav {
+    background: theme-color('light');
+
+    &--list {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        padding: 0;
+    }
+
+    &--item {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &--link {
+        padding: 0;
+    }
+
+    &--dropdown-toggle {
+        @extend .dropdown-toggle
+    }
+
+    &--dropdown-menu {
+        display: none;
+        width: 100%;
+    }
+}

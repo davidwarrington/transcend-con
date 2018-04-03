@@ -1,0 +1,43 @@
+extends layout
+
+block content
+    .dash-container.container-fluid
+        header.dash-header
+            .container
+                span.h4.dash-welcome Hello Admin
+                a.btn.btn-logout(href="/twitter/logout") Logout
+
+        .dash-content.container
+            .row
+                nav.dash-nav.col-12.col-md-3
+                    ul.dash-nav--list.nav.pt-3
+                        li.dash-nav--item.nav-item
+                            a(href="/admin").dash-nav--link.nav-link Event
+                        hr.w-100
+                        li.dash-nav--item.nav-item
+                            span.dash-nav--link.nav-link Students
+
+                        for student in students
+                            - var url = `/admin/student/${student.slug}`
+                            li.dash-nav--item.nav-item
+                                +nav-dropdown(url, student.name, student.portfolio)
+                        li.dash-nav--link.nav-link
+                            a(href='/admin/student/new_student') Add Student
+                            
+
+
+                .dash-forms.col-12.col-md-9.pt-3
+                    if dash_view === 'event'
+                        include includes/forms/event-form
+                    else if dash_view === 'student'
+                        if student
+                            h2 Editing #{student.name}
+                        else
+                            h2 Creating a new student
+                        include includes/forms/student-form
+                    else if dash_view === 'portfolio'
+                        if portfolio
+                            h2 Editing #{portfolio.name} by #{student.name}
+                        else
+                            h2 Creating a new portfolio item for #{student.name}
+                        include includes/forms/portfolio-form

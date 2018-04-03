@@ -1,0 +1,21 @@
+[
+    {
+        "name": "Lewis Singleton",
+        "slug": "lewis-singleton",
+        "role": "Animator",
+        "bio": "blah",
+        "photo": {},
+        "portfolio": [
+            {
+                "name": "Project",
+                "slug": "project",
+                "description": "new",
+                "project_type": "image",
+                "image": {
+                    "url": "#",
+                    "alt": "Project"
+                }
+            }
+        ]
+    }
+]

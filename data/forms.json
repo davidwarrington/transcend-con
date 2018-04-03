@@ -1,0 +1,110 @@
+{
+    "event": {
+        "name": {
+            "label": "Event Name",
+            "type": "text",
+            "required": true
+        },
+        "ticket_link": {
+            "label": "Ticket Booking Link",
+            "type": "url",
+            "required": false
+        },
+        "description": {
+            "label": "Event Description",
+            "type": "textarea",
+            "required": true
+        },
+        "image": {
+            "label": "About Image",
+            "description": "An image to accompany the 'About' section.",
+            "type": "file",
+            "request_alt": true,
+            "required": true
+        },
+        "social": {
+            "label": "Social Media",
+            "type": "heading"
+        },
+        "twitter": {
+            "label": "Twitter Username",
+            "type": "text"
+        },
+        "facebook": {
+            "label": "Facebook Username",
+            "type": "text"
+        }
+    },
+    "portfolio": {
+        "name": {
+            "label": "Project Title",
+            "type": "text",
+            "required": true
+        },
+        "description": {
+            "label": "Project Description",
+            "type": "textarea",
+            "required": true
+        },
+        "project_type": {
+            "label": "Project Display Type",
+            "type": "select",
+            "options": [
+                {
+                    "label": "Image",
+                    "value": "image"
+                }, 
+                {
+                    "label": "Video",
+                    "value": "video"
+                }
+            ]
+        },
+        "image": {
+            "label": "Project Image",
+            "type": "file"
+        },
+        "yt": {
+            "label": "Project Youtube URL",
+            "type": "url"
+        }
+    },
+    "student": {
+        "name": {
+            "label": "Student Name",
+            "type": "text",
+            "required": true
+        },
+        "role": {
+            "label": "Role",
+            "type": "text",
+            "required": true
+        },
+        "bio": {
+            "label": "Student Bio",
+            "type": "textarea",
+            "required": true
+        },
+        "image": {
+            "label": "Image",
+            "type": "file",
+            "required": true
+        },
+        "contact": {
+            "label": "Contact Links",
+            "type": "heading"
+        },
+        "twitter": {
+            "label": "Twitter Username",
+            "type": "text"
+        },
+        "facebook": {
+            "label": "Facebook Username",
+            "type": "text"
+        },
+        "email": {
+            "label": "Email",
+            "type": "email"
+        }
+    }
+}

@@ -1,0 +1,10 @@
+if portfolio.slug
+    - var slug = portfolio.slug
+else
+    - var slug = 'new_item'
+- var action = `/admin/students/${student.slug}/portfolio/${slug}/save`
+form(action=action)
+    for input in form
+        +form-input(input)
+
+    button.btn.btn-primary(type="submit") Save Changes
