@@ -114,13 +114,40 @@
         "slug": "chris-wood",
         "portfolio": [
             {
-                "name": "vhbkp",
+                "name": "New Project",
                 "description": "",
                 "project_type": "image",
                 "yt": "",
-                "image": {},
-                "slug": "vhbkp"
+                "image": {
+                    "url": "chris-wood/portfolio/new-project.jpg",
+                    "alt": "New Project"
+                },
+                "slug": "new-project"
+            },
+            {
+                "name": "Happy Project",
+                "description": "",
+                "project_type": "image",
+                "yt": "",
+                "image": {
+                    "url": "chris-wood/portfolio/happy-project.jpg",
+                    "alt": "Happy Project"
+                },
+                "slug": "happy-project"
             }
         ]
+    },
+    {
+        "name": "James",
+        "role": "",
+        "bio": "",
+        "twitter": "",
+        "facebook": "",
+        "email": "",
+        "image": {
+            "url": "james/jamesnull",
+            "alt": "James"
+        },
+        "slug": "james"
     }
 ]

@@ -123,19 +123,39 @@ const formSubmitHandler = (req, res) => {
             if (req.params.student !== 'new_student'){
                 students.forEach((student, index) => {
                     if (student.slug === config.student.slug) {
+
+                        new_data.slug = slugify(new_data.name);
+
+                        const ext_name = path.extname(students[index].image.url);
+
+                        const image_path = `${req.params.student}`;
+                        fs.renameSync(`assets/img/${image_path}`, `assets/img/${new_data.slug}`)
+                        fs.renameSync(`assets/img/${new_data.slug}/${req.params.student}${ext_name}`, `assets/img/${new_data.slug}/${new_data.slug}${config.ext_name}`)
+
+                        new_data.image.url = `${new_data.slug}/${new_data.slug}${config.ext_name}`;
+                        new_data.image.alt = new_data.name;
+
                         students[index] = new_data;
-                        students[index].slug = slugify(new_data.name);
 
                         config.return_route = `/student/${students[index].slug}`;
                     }
                 }); 
             } else {
                 new_data.slug = slugify(new_data.name);
+
+                const image_path = `${req.params.student}`;
+                fs.renameSync(`assets/img/${image_path}`, `assets/img/${new_data.slug}`)
+                fs.renameSync(`assets/img/${new_data.slug}/${req.params.student}${config.ext_name}`, `assets/img/${new_data.slug}/${new_data.slug}${config.ext_name}`)
+
+                new_data.image.url = `${new_data.slug}/${new_data.slug}${config.ext_name}`;
+                new_data.image.alt = new_data.name;
+
                 students.push(new_data);
                 config.return_route = `/student/${new_data.slug}`;
             }
 
             new_data = students;
+
         } else if (req.route.path === '/student/:student/portfolio/:portfolio/save') {
             students.forEach((student, index) => {
                 if (student.slug === req.params.student) {
@@ -146,21 +166,26 @@ const formSubmitHandler = (req, res) => {
                     if (req.params.portfolio !== 'new_item') {
                         student.portfolio.forEach((portfolio, p_index) => {
                             if (portfolio.slug === req.params.portfolio) {
+                                new_data.slug = slugify(new_data.name);
+
+                                const file_loc = `assets/img/${students[index].slug}/portfolio/`;
+                                const old_name = students[index].portfolio[p_index].image.url;
+                                const new_name = `${new_data.slug}${path.extname(old_name)}`;
+
+                                if (fs.existsSync(`assets/img/${old_name}`)) {
+                                    fs.renameSync(`assets/img/${old_name}`, file_loc + new_name);
+                                }
+
                                 students[index].portfolio[p_index] = new_data;
-                                students[index].portfolio[p_index].slug = slugify(new_data.name);
 
                                 const image = {
-                                    url: `${students[index].slug}/portfolio/${slugify(new_data.name)}${config.ext_name}`,
+                                    url: `${students[index].slug}/portfolio/${slugify(new_data.name)}${path.extname(old_name)}`,
                                     alt: new_data.name
                                 }
 
                                 students[index].portfolio[p_index].image = image;
 
                                 config.return_route = `/student/${students[index].slug}/portfolio/${slugify(new_data.name)}`;
-
-                                if (fs.existsSync(`assets/img/${students[index].slug}/portfolio/${req.params.portfolio}${config.ext_name}`)) {
-                                    // Rename file
-                                }
                             }
                         }); 
                     } else {
