@@ -13,7 +13,7 @@
  * in scripts.
  */
 var selectors = {
-    display_type    : '#project_display_type',
+    display_type    : '#project_type',
     dropdown_toggle : '.dash-nav--dropdown-toggle',
     dropdown_menu   : '.dash-nav--dropdown-menu'
 }

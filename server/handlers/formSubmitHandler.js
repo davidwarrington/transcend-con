@@ -126,7 +126,7 @@ const formSubmitHandler = (req, res) => {
 
                         new_data.slug = slugify(new_data.name);
 
-                        const ext_name = path.extname(students[index].image.url);
+                        const ext_name = config.ext_name ? config.ext_name : path.extname(students[index].image.url);
 
                         const image_path = `${req.params.student}`;
                         fs.renameSync(`assets/img/${image_path}/${req.params.student}${ext_name}`, `assets/img/${image_path}/${new_data.slug}${ext_name}`)
@@ -170,7 +170,10 @@ const formSubmitHandler = (req, res) => {
 
                                 const file_loc = `assets/img/${students[index].slug}/portfolio/`;
                                 const old_name = students[index].portfolio[p_index].image.url;
-                                const new_name = `${new_data.slug}${path.extname(old_name)}`;
+
+                                const ext_name = config.ext_name ? config.ext_name : path.extname(old_name);
+
+                                const new_name = `${new_data.slug}${ext_name}`;
 
                                 if (fs.existsSync(`assets/img/${old_name}`)) {
                                     fs.renameSync(`assets/img/${old_name}`, file_loc + new_name);
@@ -179,7 +182,7 @@ const formSubmitHandler = (req, res) => {
                                 students[index].portfolio[p_index] = new_data;
 
                                 const image = {
-                                    url: `${students[index].slug}/portfolio/${slugify(new_data.name)}${path.extname(old_name)}`,
+                                    url: `${students[index].slug}/portfolio/${slugify(new_data.name)}${ext_name}`,
                                     alt: new_data.name
                                 }
 
