@@ -1,7 +1,10 @@
+//- This view uses the layout template as a base
 extends layout
 
+//- We create the dashboard within the layout template's 'content' block
 block content
     .dash-container.container-fluid
+        //- Dashboard Header
         header.dash-header
             .container
                 span.h4.dash-welcome Hello Admin
@@ -9,6 +12,7 @@ block content
 
         .dash-content.container
             .row
+                //- Dashboard navigation
                 nav.dash-nav.col-12.col-md-3
                     ul.dash-nav--list.nav.pt-3
                         li.dash-nav--item.nav-item
@@ -24,10 +28,9 @@ block content
                         li.dash-nav--link.nav-link
                             a(href='/admin/student/new_student') Add Student
                             
-
-
+                //- Dashboard Form
                 .dash-forms.col-12.col-md-9.pt-3
-                    if dash_view === 'event'
+                    if dash_view === 'event'                        
                         include includes/forms/event-form
                     else if dash_view === 'student'
                         if student

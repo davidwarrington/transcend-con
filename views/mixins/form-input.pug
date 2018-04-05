@@ -1,4 +1,5 @@
-mixin form-input(input)
+mixin form-input(input, obj)
+    - var obj = obj || { "image": { "url": null }};
     .form-group
         //- .replace() is passed two values, a 
         //- regExp that matches all instances of 
@@ -6,32 +7,46 @@ mixin form-input(input)
         //- them with an underscore. This is done 
         //- to ensure valid id and label attributes.
         - var label = input.label.toLowerCase().replace(/ /g, '_');
+
+        //- Unless the input type is a heading, create a label.
+        //- If the input type is a heading, create that heading.
         unless input.type === 'heading'
-            label(for=label)= input.label
+            label(for=input.id)= input.label
         else
             h4= input.label
+
+        //- If there was an error when validating the form, 
+        //- render the error message beside the relevant 
+        //- label.
+        if errors[input.id]
+                span.text-danger.ml-3= errors[input.id].message
         
+        //- Create the inputs depending on what their type value is set to.
         if input.type === 'textarea'
-            textarea.form-control(name=label id=label rows="6")= input.value
+            textarea.form-control(name=input.id id=input.id rows="6")= obj[input.id]
         else if input.type === 'file'
-            input.form-control-file(type=input.type name=label id=label value=input.value)
+            input.form-control-file(type=input.type name=input.id id=input.id)
         else if input.type === 'select'
-            select.form-control(type=input.type name=label id=label value=input.value)
+            select.form-control(type=input.type name=input.id id=input.id value=obj[input.id])
                 for option in input.options
                     option(value=option.value)= option.label
-        else
-            input.form-control(type=input.type name=label id=label value=input.value)
+        else if input.type !== 'heading'
+            input.form-control(type=input.type name=input.id id=input.id value=obj[input.id])
 
+        //- Any input with a description should have that included after the input
         if input.description
             small.form-text.text-muted= input.description
 
+        //- If the input type is file, we create a preview of the current set image.
         if input.type === 'file'
             p Current Image:
-            - var url = `assets/img/${input.value}`
+            - var url = `/assets/img/${obj[input.id].url}`
             img.w-100(src=url, alt=input.alt)
 
+    //- If the input type is file, and there it is set to ask for an alt tag, 
+    //- create an input to save as the alt tag
     if input.type === 'file' && input.request_alt
         .form-group
-            - var alt_label = `${label}_alt`
+            - var alt_label = `${input.id}_alt`
             label(for=alt_label)= `Image Description`
-            input.form-control(type="text" name=alt_label id=alt_label value=input.alt)
+            input.form-control(type="text" name=alt_label id=alt_label value=obj[input.id].alt)

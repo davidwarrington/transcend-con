@@ -1,20 +1,125 @@
 [
     {
         "name": "Lewis Singleton",
-        "slug": "lewis-singleton",
         "role": "Animator",
-        "bio": "blah",
-        "photo": {},
+        "bio": "blahblah\r\nblah",
+        "twitter": "",
+        "facebook": "",
+        "email": "",
+        "image": {},
+        "slug": "lewis-singleton",
         "portfolio": [
             {
-                "name": "Project",
-                "slug": "project",
-                "description": "new",
+                "name": "DSADA",
+                "description": "",
                 "project_type": "image",
-                "image": {
-                    "url": "#",
-                    "alt": "Project"
-                }
+                "yt": "",
+                "image": {},
+                "slug": "dsada"
+            }
+        ]
+    },
+    {
+        "name": "David Warrington",
+        "role": "Web Developer",
+        "bio": "",
+        "twitter": "",
+        "facebook": "",
+        "email": "",
+        "image": {},
+        "slug": "david-warrington",
+        "portfolio": [
+            {
+                "name": "fvhj",
+                "description": "",
+                "project_type": "image",
+                "yt": "",
+                "image": {},
+                "slug": "fvhj"
+            }
+        ]
+    },
+    {
+        "name": "Daniel Taylor-Crossland",
+        "role": "Games Designer",
+        "bio": "blah",
+        "twitter": "",
+        "facebook": "",
+        "email": "",
+        "image": {},
+        "slug": "daniel-taylor-crossland",
+        "portfolio": [
+            {
+                "name": "vcj",
+                "description": "",
+                "project_type": "image",
+                "yt": "",
+                "image": {},
+                "slug": "vcj"
+            },
+            {
+                "name": "Dambusters",
+                "description": "",
+                "project_type": "image",
+                "yt": "",
+                "image": {},
+                "slug": "dambusters"
+            }
+        ]
+    },
+    {
+        "name": "Sam Milner",
+        "role": "Graphic Designer",
+        "bio": "",
+        "twitter": "",
+        "facebook": "",
+        "email": "",
+        "image": {},
+        "slug": "sam-milner",
+        "portfolio": [
+            {
+                "name": "Habame",
+                "description": "",
+                "project_type": "image",
+                "yt": "http://dsa.com",
+                "image": {},
+                "slug": "habame"
+            },
+            {
+                "name": "Habarm",
+                "description": "",
+                "project_type": "image",
+                "yt": "",
+                "image": {},
+                "slug": "habarm"
+            },
+            {
+                "name": "Dambusters",
+                "description": "",
+                "project_type": "image",
+                "yt": "",
+                "image": {},
+                "slug": "dambusters"
+            }
+        ]
+    },
+    {
+        "name": "Chris Wood",
+        "role": "",
+        "bio": "",
+        "twitter": "",
+        "facebook": "",
+        "email": "",
+        "image": {},
+        "slug": "chris-wood",
+        "portfolio": [
+            {
+                "name": "vhbkp",
+                "description": "",
+                "project_type": "image",
+                "yt": "",
+                "image": {},
+                "slug": "vhbkp"
             }
         ]
     }

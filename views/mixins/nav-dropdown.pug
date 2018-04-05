@@ -2,6 +2,7 @@ mixin nav-dropdown(url, text, sub_links)
     a.dash-nav--link.nav-link(href=url)= text
     .dash-nav--dropdown-toggle
     .dash-nav--dropdown-menu
+        //- If the dropdown already has links associated, create those links
         if sub_links
             for item in sub_links
                 - var item_url = `${url}/portfolio/${item.slug}`

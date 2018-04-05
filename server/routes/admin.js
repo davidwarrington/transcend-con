@@ -1,17 +1,35 @@
 /**
  * Import npm packages used 
  * within the script.
+ * 
+ * Require Reload allos the 
+ * reloading of files called 
+ * using the require() 
+ * function. It works by 
+ * deleting them from the 
+ * cache and then 
+ * re-requiring them when 
+ * reload is called.
  */
 const express = require('express');
-const router = express.Router();
+const fs      = require('fs');
+const path    = require('path');
+const reload  = require('require-reload')(require);
+const router  = express.Router();
 
 /**
  * Import data to be rendered 
  * on page from JSON files.
  */
-const event = require('../../data/event.json');
-const forms = require('../../data/forms.json');
-const students = require('../../data/students.json');
+let event    = require('../../data/event.json');
+let forms    = require('../../data/forms.json');
+let students = require('../../data/students.json');
+
+/**
+ * Import function for 
+ * handling form submissions.
+ */
+const formSubmitHandler = require('../controllers/formSubmitHandler');
 
 /**
  * renderLogin
@@ -49,39 +67,34 @@ const renderLogin = (req, res) => {
  */
 router.get('/', (req, res) => {
     if (req.session.loggedIn) {
-        const form = forms.event;
-        form.name.value        = event.name;
-        form.ticket_link.value = event.ticket_link;
-        form.description.value = event.description;
-        form.image.value       = event.photo.url;
-        form.image.alt         = event.photo.alt;
-        form.twitter.value     = event.twitter;
-        form.facebook.value    = event.facebook;
+        event = reload('../../data/event.json');
+        students = reload('../../data/students.json');
 
         const data = { 
             dash_view: 'event', 
-            // event: event, 
-            form: form,
+            event: event,
+            errors: req.session.errors ? req.session.errors : {},
+            form: forms.event,
             students: students
         };
-        res.render('dashboard', data);  
+        
+        res.render('dashboard', data);
+        req.session.errors = {};
     } else {
         renderLogin(req, res);
     }
 });
 
 /**
- * Admin Route
+ * Admin Student Route
  * 
- * If the user/session has 
- * successfully logged in, 
- * render the admin view, 
- * else, render the login
- * view, along with a login 
- * error if appropriate.
+ * Used for editing student 
+ * information
  */
 router.get('/student/:student', (req, res) => {
     if (req.session.loggedIn) {
+        event = reload('../../data/event.json');
+        students = reload('../../data/students.json');
         /**
          * Determine if a new student 
          * is being created.
@@ -101,16 +114,7 @@ router.get('/student/:student', (req, res) => {
         const student = students.filter(student => student.slug === req.params.student)[0];
 
         const form = forms.student;
-        if (!_new) {
-            form.name.value        = student.name;
-            form.role.value        = student.role;
-            form.bio.value         = student.bio;
-            form.image.value       = student.photo.url;
-            form.image.alt         = student.name;
-            form.twitter.value     = student.twitter;
-            form.facebook.value    = student.facebook;
-            form.email.value       = student.email;
-        } else {
+        if (_new) {
             form.name.value        = null;
             form.role.value        = null;
             form.bio.value         = null;
@@ -123,12 +127,14 @@ router.get('/student/:student', (req, res) => {
         
         const data = { 
             dash_view: 'student',
+            errors: req.session.errors ? req.session.errors : {},
             // event: event,
             form: form,
             students: students,
             student: student
         };
-        res.render('dashboard', data);  
+        res.render('dashboard', data);
+        req.session.errors = {};
     } else {
         renderLogin(req, res);
     }
@@ -136,6 +142,8 @@ router.get('/student/:student', (req, res) => {
 
 router.get('/student/:student/portfolio/:portfolio', (req, res) => {
     if (req.session.loggedIn) {
+        event = reload('../../data/event.json');
+        students = reload('../../data/students.json');
         /**
          * Determine if a new 
          * portfolio item is 
@@ -150,7 +158,7 @@ router.get('/student/:student/portfolio/:portfolio', (req, res) => {
          * portfolio item.
          */
         const student   = students.filter(student => student.slug === req.params.student)[0];
-        const portfolio = _new ? {} 
+        const portfolio = _new ? null 
             : student.portfolio.filter(portfolio => portfolio.slug === req.params.portfolio)[0];
 
         const form = forms.portfolio;
@@ -168,17 +176,7 @@ router.get('/student/:student/portfolio/:portfolio', (req, res) => {
          * the new route after a 
          * non-new route.
          */
-        if (!_new) {
-            form.name.value         = portfolio.name;
-            form.description.value  = portfolio.description;
-            form.project_type.value = portfolio.project_type;
-            if (portfolio.project_type === 'image') {
-                form.image.url      = portfolio.image.url;
-                form.image.alt      = `${portfolio.name} by ${student.name}`;
-            } else if (portfolio.project_type === 'video') {
-                form.yt             = portfolio.yt;
-            }
-        } else {
+        if (_new) {
             form.name.value         = null;
             form.description.value  = null;
             form.project_type.value = null;
@@ -189,6 +187,7 @@ router.get('/student/:student/portfolio/:portfolio', (req, res) => {
 
         const data = { 
             dash_view: 'portfolio',
+            errors: req.session.errors ? req.session.errors : {},
             // event: event,
             form: form,
             student: student,
@@ -196,7 +195,8 @@ router.get('/student/:student/portfolio/:portfolio', (req, res) => {
             portfolio: portfolio
         };
 
-        res.render('dashboard', data);  
+        res.render('dashboard', data);
+        req.session.errors = {};  
     } else {
         renderLogin(req, res);
     }
@@ -205,8 +205,28 @@ router.get('/student/:student/portfolio/:portfolio', (req, res) => {
 /**
  * Form Submit Handler Routes
  */
-router.post('/save', () => {
+router.post('/save', (req, res) => {
+    if (req.session.loggedIn) {
+        formSubmitHandler(req, res);
+    } else {
+        renderLogin(req, res);
+    }
+});
 
+router.post('/student/:student/save', (req, res) => {
+    if (req.session.loggedIn) {
+        formSubmitHandler(req, res);
+    } else {
+        renderLogin(req, res);
+    }
+});
+
+router.post('/student/:student/portfolio/:portfolio/save', (req, res) => {
+    if (req.session.loggedIn) {
+        formSubmitHandler(req, res);
+    } else {
+        renderLogin(req, res);
+    }
 });
 
 module.exports = router;

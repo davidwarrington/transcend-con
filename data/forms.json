@@ -2,21 +2,25 @@
     "event": {
         "name": {
             "label": "Event Name",
+            "id": "name",
             "type": "text",
             "required": true
         },
         "ticket_link": {
             "label": "Ticket Booking Link",
+            "id": "ticket_link",
             "type": "url",
             "required": false
         },
         "description": {
             "label": "Event Description",
+            "id": "description",
             "type": "textarea",
             "required": true
         },
         "image": {
             "label": "About Image",
+            "id": "image",
             "description": "An image to accompany the 'About' section.",
             "type": "file",
             "request_alt": true,
@@ -28,26 +32,31 @@
         },
         "twitter": {
             "label": "Twitter Username",
+            "id": "twitter",
             "type": "text"
         },
         "facebook": {
             "label": "Facebook Username",
+            "id": "facebook",
             "type": "text"
         }
     },
     "portfolio": {
         "name": {
             "label": "Project Title",
+            "id": "name",
             "type": "text",
             "required": true
         },
         "description": {
             "label": "Project Description",
+            "id": "description",
             "type": "textarea",
             "required": true
         },
         "project_type": {
             "label": "Project Display Type",
+            "id": "project_type",
             "type": "select",
             "options": [
                 {
@@ -62,31 +71,37 @@
         },
         "image": {
             "label": "Project Image",
+            "id": "image",
             "type": "file"
         },
         "yt": {
             "label": "Project Youtube URL",
+            "id": "yt",
             "type": "url"
         }
     },
     "student": {
         "name": {
             "label": "Student Name",
+            "id": "name",
             "type": "text",
             "required": true
         },
         "role": {
             "label": "Role",
+            "id": "role",
             "type": "text",
             "required": true
         },
         "bio": {
             "label": "Student Bio",
+            "id": "bio",
             "type": "textarea",
             "required": true
         },
         "image": {
             "label": "Image",
+            "id": "image",
             "type": "file",
             "required": true
         },
@@ -96,14 +111,17 @@
         },
         "twitter": {
             "label": "Twitter Username",
+            "id": "twitter",
             "type": "text"
         },
         "facebook": {
             "label": "Facebook Username",
+            "id": "facebook",
             "type": "text"
         },
         "email": {
             "label": "Email",
+            "id": "email",
             "type": "email"
         }
     }
