@@ -8,4 +8,4 @@ mixin nav-dropdown(url, text, sub_links)
                 - var item_url = `${url}/portfolio/${item.slug}`
                 a.dash-nav--link.nav-link(href=item_url)= item.name
         - var new_url = `${url}/portfolio/new_item`
-        a.dash-nav--link.nav-link(href=new_url) Add Portfolio Item
+        a.dash-nav--link.dash-nav--new.nav-link(href=new_url) Add Portfolio Item

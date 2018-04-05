@@ -47,18 +47,40 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        margin-left: -15px;
+        margin-right: -15px;
+        padding: 15px;
+    }
+
+    &--heading {
+        color: gray('900');
+        padding: 0;
     }
 
     &--link {
         padding: 0;
     }
 
+    @include text-emphasis-variant('.dash-nav--link', gray('700'));
+
+
     &--dropdown-toggle {
-        @extend .dropdown-toggle
+        @extend .dropdown-toggle;
     }
 
     &--dropdown-menu {
         display: none;
         width: 100%;
+
+        .dash-nav--link {
+            margin-left: -15px;
+            margin-right: -15px;
+            padding: 15px;
+        }
+    }
+
+    &--new {
+        background: darken(theme-color('light'), 5%);
     }
 }
+

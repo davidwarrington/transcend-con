@@ -19,14 +19,14 @@ block content
                             a(href="/admin").dash-nav--link.nav-link Event
                         hr.w-100
                         li.dash-nav--item.nav-item
-                            span.dash-nav--link.nav-link Students
+                            span.dash-nav--heading.nav-link Students
 
                         for student in students
                             - var url = `/admin/student/${student.slug}`
                             li.dash-nav--item.nav-item
                                 +nav-dropdown(url, student.name, student.portfolio)
-                        li.dash-nav--link.nav-link
-                            a(href='/admin/student/new_student') Add Student
+                        li.dash-nav--item.dash-nav--new.nav-item
+                            a.dash-nav--link.nav-link(href='/admin/student/new_student') Add Student
                             
                 //- Dashboard Form
                 .dash-forms.col-12.col-md-9.pt-3

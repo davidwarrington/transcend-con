@@ -7699,9 +7699,25 @@ a.text-dark:hover, a.text-dark:focus {
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
-            justify-content: space-between; }
+            justify-content: space-between;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 15px; }
+  .dash-nav--heading {
+    color: #212529;
+    padding: 0; }
   .dash-nav--link {
     padding: 0; }
+  .dash-nav .dash-nav--link {
+    color: #495057 !important; }
+  .dash-nav a.dash-nav--link:hover, .dash-nav a.dash-nav--link:focus {
+    color: #32373b !important; }
   .dash-nav--dropdown-menu {
     display: none;
     width: 100%; }
+    .dash-nav--dropdown-menu .dash-nav--link {
+      margin-left: -15px;
+      margin-right: -15px;
+      padding: 15px; }
+  .dash-nav--new {
+    background: #e9ecef; }
