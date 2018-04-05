@@ -149,5 +149,18 @@
             "alt": "James"
         },
         "slug": "james"
+    },
+    {
+        "name": "Terry",
+        "role": "",
+        "bio": "",
+        "twitter": "",
+        "facebook": "",
+        "email": "",
+        "image": {
+            "url": "terry/terry.png",
+            "alt": "Terry"
+        },
+        "slug": "terry"
     }
 ]

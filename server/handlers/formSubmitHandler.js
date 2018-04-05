@@ -129,10 +129,10 @@ const formSubmitHandler = (req, res) => {
                         const ext_name = path.extname(students[index].image.url);
 
                         const image_path = `${req.params.student}`;
+                        fs.renameSync(`assets/img/${image_path}/${req.params.student}${ext_name}`, `assets/img/${image_path}/${new_data.slug}${ext_name}`)
                         fs.renameSync(`assets/img/${image_path}`, `assets/img/${new_data.slug}`)
-                        fs.renameSync(`assets/img/${new_data.slug}/${req.params.student}${ext_name}`, `assets/img/${new_data.slug}/${new_data.slug}${config.ext_name}`)
 
-                        new_data.image.url = `${new_data.slug}/${new_data.slug}${config.ext_name}`;
+                        new_data.image.url = `${new_data.slug}/${new_data.slug}${ext_name}`;
                         new_data.image.alt = new_data.name;
 
                         students[index] = new_data;
