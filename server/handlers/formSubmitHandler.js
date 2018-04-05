@@ -17,7 +17,7 @@ const slugify = text => text.toLowerCase().replace(/ /g, '-');
  * Import the File Filter to 
  * be used my Multer.
  */
-const checkFileTypeHandler = require('../controllers/checkFileTypeHandler');
+const checkFileTypeHandler = require('../handlers/checkFileTypeHandler');
 
 const formSubmitHandler = (req, res) => {
     event    = reload('../../data/event.json');

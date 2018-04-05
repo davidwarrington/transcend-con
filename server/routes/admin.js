@@ -29,7 +29,7 @@ let students = require('../../data/students.json');
  * Import function for 
  * handling form submissions.
  */
-const formSubmitHandler = require('../controllers/formSubmitHandler');
+const formSubmitHandler = require('../handlers/formSubmitHandler');
 
 /**
  * renderLogin

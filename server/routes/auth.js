@@ -10,7 +10,7 @@ const passport = require('passport');
  * Import the authHandler function 
  * from the controllers directory.
  */
-const authHandler = require('../controllers/authHandler');
+const authHandler = require('../handlers/authHandler');
 
 /**
  * Login Route
