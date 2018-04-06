@@ -194,12 +194,14 @@ const formSubmitHandler = (req, res) => {
                     } else {
                         new_data.slug = slugify(new_data.name);
 
-                        const image_path = `${students[index].slug}/portfolio/`;
-                        fs.renameSync(`assets/img/${image_path}new_item${config.ext_name}`, `assets/img/${image_path}${new_data.slug}${config.ext_name}`)
+                        if (new_data.project_type === 'image') {
+                            const image_path = `${students[index].slug}/portfolio/`;
+                            fs.renameSync(`assets/img/${image_path}new_item${config.ext_name}`, `assets/img/${image_path}${new_data.slug}${config.ext_name}`)
 
-                        new_data.image.url = `${image_path}${new_data.slug}${config.ext_name}`;
-                        new_data.image.alt = new_data.name;
-
+                            new_data.image.url = `${image_path}${new_data.slug}${config.ext_name}`;
+                            new_data.image.alt = new_data.name;
+                        }
+                        
                         students[index].portfolio.push(new_data);
                         config.return_route = `/student/${students[index].slug}/portfolio/${slugify(new_data.name)}`;
                         

@@ -1,0 +1,17 @@
+header
+    nav.navbar.navbar-expand-lg.navbar-light.bg-primary
+        a.navbar-brand(href='/')= event.name
+
+        button:button.navbar-toggler(data-toggle='collapse' data-target='#navbar' aria-controls='navbar' aria-expanded='false' aria-label='Toggle Navigation')
+            span.navbar-toggler-icon
+        
+        .navbar-collapse.collapse#navbar
+            ul.navbar-nav
+                li.nav-item
+                    a(href="/").nav-link Home
+                for student in students
+                    li.nav-item
+                        - var url = `/student/${student.slug}`;
+                        a(href=url).nav-link= student.name
+                li.nav-item
+                    a(href="/tickets").nav-link Tickets

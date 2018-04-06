@@ -1,4 +1,51 @@
 extends layout
 
-block content
-    h1 #{name}
+block header
+    include includes/header
+block content    
+    block page_content
+        .container-fluid
+            .student-list.row
+                for student in students
+                    - var bg_image = `background-image: url('/assets/img/${student.image.url}')`;
+                    .student-list--student(style=bg_image)
+                        .student-list--student-info
+                            //- The variable declaration here replaces all 
+                            //- hypens within a name string with a non-breaking 
+                            //- hyphen. This prevents students with 
+                            //- double-barrelled surnames having their surname
+                            //- wrap onto a new line.
+                            - var name = student.name.replace(/-/g, '‑');
+                            span.student-name.h2= name
+                            span.student-role.h4= student.role
+                            - var first = student.name.split(' ')[0];
+                            - var url = `/student/${student.slug}`;
+                            a(href=url).student-link Learn about #{first}
+        
+        .about.container-fluid
+            .container
+                .row
+                    .col-12
+                        h2 About
+                    
+                    .col-12.col-lg-7
+                        - var url = `/assets/img/${event.image.url}`;
+                        img(src=url, alt=event.image.alt).about-img
+
+                    .about-desc.col-12.col-lg-4
+                        - var description = event.description.split('\r\n');
+                        for paragraph in description
+                            if paragraph
+                                p= paragraph
+
+        .social-bar.container
+            .row
+                .col-12
+                    span.h4 Follow us here:
+                        - var twitter = `https://twitter.com/${event.twitter}`
+                        a(href=twitter).social-link Twitter
+                        - var facebook = `https://facebook.com/${event.facebook}`;
+                        a(href=facebook).social-link Facebook
+        
+    include includes/footer
+                    

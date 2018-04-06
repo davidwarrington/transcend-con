@@ -24,12 +24,21 @@ mixin form-input(input, obj)
         //- Create the inputs depending on what their type value is set to.
         if input.type === 'textarea'
             textarea.form-control(name=input.id id=input.id rows="6")= obj[input.id]
+            
         else if input.type === 'file'
             input.form-control-file(type=input.type name=input.id id=input.id)
+            
         else if input.type === 'select'
             select.form-control(type=input.type name=input.id id=input.id value=obj[input.id])
                 for option in input.options
-                    option(value=option.value)= option.label
+                    //- Determine which dropdown option to 
+                    //- give the "selected" attribute to.
+                    - var selected = obj[input.id] === option.value ? true : false;
+                    if selected
+                        option(value=option.value selected)= option.label
+                    else
+                        option(value=option.value)= option.label
+                        
         else if input.type !== 'heading'
             input.form-control(type=input.type name=input.id id=input.id value=obj[input.id])
 

@@ -1,0 +1,45 @@
+extends index
+
+block page_content
+    //- The page name should be that of the student.
+    h1= student.name
+
+    .student-bio.container
+        .row
+            .col-10.col-md-12.mx-auto
+                //- We split the student's bio into an array.
+                //- The .split() method allows us to choose what 
+                //- to split the array on. In this case we are 
+                //- using \r\n. \r\n represents a new line. 
+                - var bio = student.bio.split('\r\n');
+                for paragraph in bio
+                    //- If the user has used more than one newline 
+                    //- whilst supplying their bio, it will not 
+                    //- have a value. Therefore we only render it 
+                    //- if there is a value. Otherwise there will be 
+                    //- empty paragraph tags in the rendered HTML.
+                    if paragraph
+                        p= paragraph
+    
+    if student.email || student.facebook || student.twitter
+        .social-bar.container
+            .row
+                .col-12
+                    - var first = student.name.split(' ')[0];
+                    span.h5 Contact #{first}: 
+                        if student.email
+                            - var email = `mailto:${student.email}`;
+                            a(href=email).social-link Email
+                        if student.facebook
+                            - var facebook = `https://facebook.com/${student.facebook}`;
+                            a(href=facebook).social-link Facebook
+                        if student.twitter
+                            - var twitter = `https://twitter.com/${student.twitter}`
+                            a(href=twitter).social-link Twitter
+                    
+    
+    //- Next we check if the student has any portfolio
+    //- items. If they do, loop through them to display.
+    if student.portfolio
+        for portfolio in student.portfolio
+            .portfolio= portfolio.name

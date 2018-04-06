@@ -1,0 +1,9 @@
+.social-bar {
+    text-align: center;
+}
+
+.social-link {
+    margin-left: 1rem;
+}
+
+@include text-emphasis-variant('.social-link', gray('900'));

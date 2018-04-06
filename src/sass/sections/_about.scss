@@ -1,0 +1,22 @@
+.about {
+    background: $secondary;
+    color: $white;
+
+    &-desc {
+        margin-bottom: auto;
+        margin-top: auto;
+
+        @include media-breakpoint-down(md) {
+            padding-top: 1rem;
+        }
+    }
+
+    &-img {
+        border-radius: $border-radius;
+        // box-shadow: 0 20px 40px 0 rgba($black, .3);
+        height: 100%;
+        object-fit: cover;
+        object-position: right;
+        width: 100%;
+    }
+}

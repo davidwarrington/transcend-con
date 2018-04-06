@@ -1,0 +1,74 @@
+.student-list {
+    color: $white;
+    height: 80vh;
+
+    @include media-breakpoint-down(sm) {
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 1rem;
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    &--student {
+        background: theme-color('danger');
+
+        background-position: center;
+        background-repeat: no-repeat;        
+        background-size: auto 100%;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 20%;
+        position: relative;
+        text-align: center;
+        transition: $transition-xlong;
+
+        @include media-breakpoint-down(sm) {
+            // background-size: cover;
+            border-radius: $border-radius;
+            margin-top: 2rem;
+            padding-top: 75%;
+            padding-bottom: 10%;
+            width: 100%;
+        }
+
+        @include media-breakpoint-up(md) {
+            &:before {
+                background: rgba($secondary, 0);
+                content: '';
+                position: absolute;
+                height: 100%;
+                transition: $transition-medium;
+                width: 100%;
+            }
+        }
+        
+        &:hover {
+            background-size: auto 110%;
+
+            &:before {
+                background: rgba($secondary, .85);
+            }
+
+            .student-list--student-info {
+                opacity: 1;
+                transform: translateY(0rem);
+            }
+        }
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(1rem);
+            transition: $transition-long;
+
+            @include media-breakpoint-down(sm) {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    }
+}

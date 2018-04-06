@@ -1,0 +1,6 @@
+.footer {
+    background: theme-color('primary');
+    text-align: center;
+}
+
+@include text-emphasis-variant('.footer a', gray('900'));
