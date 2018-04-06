@@ -12,6 +12,9 @@ router.get('/', (req, res) => {
 });
 
 router.get('/student/:student', (req, res) => {
+    data.event = reload('../../data/event.json');
+    data.students = reload('../../data/students.json');
+    
     data.student = data.students.filter(student => student.slug === req.params.student)[0];
     res.render('student', data);
 });

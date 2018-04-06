@@ -10,7 +10,15 @@
             "url": "lewis-singleton/lewis-singleton.jpg",
             "alt": "Lewis Singleton"
         },
-        "slug": "lewis-singleton"
+        "slug": "lewis-singleton",
+        "portfolio": [
+            {
+                "name": "Showreel"
+            },
+            {
+                "name": "The Couch"
+            }
+        ]
     },
     {
         "name": "Daniel Taylor-Crossland",
