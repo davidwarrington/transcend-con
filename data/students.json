@@ -71,19 +71,5 @@
         },
         "slug": "chris-wood",
         "portfolio": []
-    },
-    {
-        "name": "David Warrington",
-        "role": "Web Developer",
-        "bio": "Dave.",
-        "twitter": "warringtondavid",
-        "facebook": "",
-        "email": "",
-        "slug": "david-warrington",
-        "image": {
-            "url": "david-warrington/david-warrington.jpg",
-            "alt": "David Warrington"
-        },
-        "portfolio": []
     }
 ]

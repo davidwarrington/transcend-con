@@ -73,18 +73,15 @@ router.get('/return', passport.authenticate('twitter', {
      * message to be rendered in 
      * the view.
      * 
-     * Also destroy the session, 
-     * logout via passport. This 
-     * is detailed further in the 
-     * '/logout' route below.
+     * Also logout via passport. 
+     * This is detailed further 
+     * in the '/logout' route 
+     * below.
      */
     if (!req.session.loggedIn) {
         req.session.loginError = true;
 
-        res.logout();
-        res.session.destroy(err => {
-            if (err) return res.negotiate(err);
-        });
+        req.logout();
     }
 
     res.redirect('/admin');
