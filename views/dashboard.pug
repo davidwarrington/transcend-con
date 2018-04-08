@@ -35,12 +35,18 @@ block content
                     else if dash_view === 'student'
                         if student
                             h2 Editing #{student.name}
+                            - var action = `/admin/student/${student.slug}/delete`;                        
+                            form(method="POST" action=action)
+                                button.btn.btn-danger(type="submit" action=action) Delete
                         else
                             h2 Creating a new student
                         include includes/forms/student-form
                     else if dash_view === 'portfolio'
                         if portfolio
                             h2 Editing #{portfolio.name} by #{student.name}
+                            - var action = `/admin/student/${student.slug}/portfolio/${portfolio.slug}/delete`;                        
+                            form(method="POST" action=action)
+                                button.btn.btn-danger(type="submit") Delete
                         else
                             h2 Creating a new portfolio item for #{student.name}
                         include includes/forms/portfolio-form

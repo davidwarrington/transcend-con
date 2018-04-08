@@ -26,10 +26,13 @@ let forms    = require('../../data/forms.json');
 let students = require('../../data/students.json');
 
 /**
- * Import function for 
+ * Import functions for 
  * handling form submissions.
  */
 const formSubmitHandler = require('../handlers/formSubmitHandler');
+const deleteItemHandler = require('../handlers/deleteItemHandler');
+const newItemHandler    = require('../handlers/newItemHandler');
+const editItemHandler   = require('../handlers/editItemHandler');
 
 /**
  * renderLogin
@@ -215,7 +218,11 @@ router.post('/save', (req, res) => {
 
 router.post('/student/:student/save', (req, res) => {
     if (req.session.loggedIn) {
-        formSubmitHandler(req, res);
+        if (req.params.student === 'new_student') {
+            newItemHandler(req, res); 
+        } else {
+            editItemHandler(req, res);
+        }
     } else {
         renderLogin(req, res);
     }
@@ -223,7 +230,30 @@ router.post('/student/:student/save', (req, res) => {
 
 router.post('/student/:student/portfolio/:portfolio/save', (req, res) => {
     if (req.session.loggedIn) {
-        formSubmitHandler(req, res);
+        if (req.params.portfolio === 'new_item') {
+            newItemHandler(req, res); 
+        } else {
+            editItemHandler(req, res);
+        }
+    } else {
+        renderLogin(req, res);
+    }
+});
+
+/**
+ * Delete Item Handler Routes
+ */
+router.post('/student/:student/delete', (req, res) => {
+    if (req.session.loggedIn) {
+        deleteItemHandler(req, res);
+    } else {
+        renderLogin(req, res);
+    }
+});
+
+router.post('/student/:student/portfolio/:portfolio/delete', (req, res) => {
+    if (req.session.loggedIn) {
+        deleteItemHandler(req, res);
     } else {
         renderLogin(req, res);
     }

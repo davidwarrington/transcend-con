@@ -13,10 +13,22 @@
         "slug": "lewis-singleton",
         "portfolio": [
             {
-                "name": "Showreel"
+                "name": "Showreel",
+                "slug": "showreel",
+                "image": {
+                    "url": null
+                }
             },
             {
-                "name": "The Couch"
+                "name": "The Ticket",
+                "description": "Ticket Proj.\r\n\r\nProj.",
+                "project_type": "image",
+                "yt": "",
+                "slug": "the-ticket",
+                "image": {
+                    "url": "lewis-singleton/portfolio/the-ticket.jpg",
+                    "alt": "The Ticket"
+                }
             }
         ]
     },
@@ -57,6 +69,21 @@
             "url": "chris-wood/chris-wood.jpg",
             "alt": "Chris Wood"
         },
-        "slug": "chris-wood"
+        "slug": "chris-wood",
+        "portfolio": []
+    },
+    {
+        "name": "David Warrington",
+        "role": "Web Developer",
+        "bio": "Dave.",
+        "twitter": "warringtondavid",
+        "facebook": "",
+        "email": "",
+        "slug": "david-warrington",
+        "image": {
+            "url": "david-warrington/david-warrington.jpg",
+            "alt": "David Warrington"
+        },
+        "portfolio": []
     }
 ]

@@ -28,9 +28,11 @@
     "passport": "^0.4.0",
     "passport-twitter": "^1.0.4",
     "pug": "^2.0.3",
-    "require-reload": "^0.2.2"
+    "require-reload": "^0.2.2",
+    "rimraf": "^2.6.2"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome": "^1.1.5",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "bootstrap": "^4.0.0",
