@@ -3,6 +3,8 @@ const multer = require('multer');
 const path   = require('path');
 const reload = require('require-reload')(require);
 
+const compare = require('../handlers/sortArray');
+
 /**
  * Import data to be rendered 
  * on page from JSON files.
@@ -180,6 +182,12 @@ const newItemHandler = (req, res) => {
 
             student.portfolio.push(portfolio);
         }
+
+        /**
+         * Sort the array 
+         * alphabetically.
+         */
+        students.sort(compare);
 
         fs.writeFileSync(`data/students.json`, JSON.stringify(students, null, 4), err => {
             if (err) throw err;

@@ -1,5 +1,32 @@
 [
     {
+        "name": "Chris Wood",
+        "role": "Camera Assistant",
+        "bio": "Chris came to East Riding College at the age of 16 to pursue his passion for media, which had been denied at school. Progressing from level 2 all the way to a BA within 7 years, with an improved GCSE in English and some work in the field as a camera assistant for Estuary TV during 2 CBYC Business Awards and at times operator for certain projects and experience with certain Adobe software. His time at college now coming to conclusion…",
+        "twitter": "",
+        "facebook": "",
+        "email": "",
+        "image": {
+            "url": "chris-wood/chris-wood.jpg",
+            "alt": "Chris Wood"
+        },
+        "slug": "chris-wood",
+        "portfolio": []
+    },
+    {
+        "name": "Daniel Taylor-Crossland",
+        "role": "Games Designer",
+        "bio": "From an early age Daniel has had a solid interest in gaming and decided to pursue this further when he first attended college with a game's design course at lvl 3. Learning more about the industry through this course he developed his skills in design and conceptual art and is now focusing on the final year of his degree.\r\n\r\nThrough progression through college he has become proficient in various software and can effectively use software such as programmes in the Adobe suite such as premiere and photoshop, other software include unity and 3DS max. Despite a focus on game's he has had experience in other areas such as film and graphic design.",
+        "twitter": "",
+        "facebook": "",
+        "email": "",
+        "image": {
+            "url": "daniel-taylor-crossland/daniel-taylor-crossland.jpg",
+            "alt": "Daniel Taylor-Crossland"
+        },
+        "slug": "daniel-taylor-crossland"
+    },
+    {
         "name": "Lewis Singleton",
         "role": "Animator",
         "bio": "From the age of 13 Lewis has been inspired to pursue a career in animation. First starting on a entry level programme in his first year of college in 2009, Lewis has progressed through different levels of various programmes focused around media. Now nearing the end of his third and final year of a degree in contemporary Media, Design And Production, with 7 years of media studies under his belt.\r\n\r\nFuelled by his love for animation, films and comics, his work often instils inspiration from these mediums! With a range skills in 3DS Max and multiple Adobe CC Programmes such as Animate Premiere, Photoshop, Illustrator and After Effects, which he has used in multiple projects and undertaken roles as director and project manager.",
@@ -33,19 +60,6 @@
         ]
     },
     {
-        "name": "Daniel Taylor-Crossland",
-        "role": "Games Designer",
-        "bio": "From an early age Daniel has had a solid interest in gaming and decided to pursue this further when he first attended college with a game's design course at lvl 3. Learning more about the industry through this course he developed his skills in design and conceptual art and is now focusing on the final year of his degree.\r\n\r\nThrough progression through college he has become proficient in various software and can effectively use software such as programmes in the Adobe suite such as premiere and photoshop, other software include unity and 3DS max. Despite a focus on game's he has had experience in other areas such as film and graphic design.",
-        "twitter": "",
-        "facebook": "",
-        "email": "",
-        "image": {
-            "url": "daniel-taylor-crossland/daniel-taylor-crossland.jpg",
-            "alt": "Daniel Taylor-Crossland"
-        },
-        "slug": "daniel-taylor-crossland"
-    },
-    {
         "name": "Sam Milner",
         "role": "Graphic Designer",
         "bio": "Ever since Sam was a child, he has been fascinated by media, especially the area of graphic design. His passion for graphic design came from his love for music, album artwork is something that he has always looked into in depth. Thanks to studying media at GCSE, AS-level and BTEC, Sam acquired a wide range of knowledge when it comes to all things media. This allowed him to proceed into a degree in contemporary media, design and production, which he is currently in his third and final year of. With graphic design being his main interest he spends a lot of time drawing musicians and his partner digitally on programs such as Adobe Photoshop and Illustrator. Studying media at both college and degree levels, Sam has accumulated skills in programs such as 3DS Max and Synth Eyes, as well as other Adobe CC programmes like After Effects, Premiere Pro and Dreamweaver. Whether or not a project he is undertaking is labelled as graphic design, Sam’s work is mainly inspired by his love for music and art. He believes, that if something carries meaning or raises question, then that is art.",
@@ -57,19 +71,5 @@
             "alt": "Sam Milner"
         },
         "slug": "sam-milner"
-    },
-    {
-        "name": "Chris Wood",
-        "role": "Camera Assistant",
-        "bio": "Chris came to East Riding College at the age of 16 to pursue his passion for media, which had been denied at school. Progressing from level 2 all the way to a BA within 7 years, with an improved GCSE in English and some work in the field as a camera assistant for Estuary TV during 2 CBYC Business Awards and at times operator for certain projects and experience with certain Adobe software. His time at college now coming to conclusion…",
-        "twitter": "",
-        "facebook": "",
-        "email": "",
-        "image": {
-            "url": "chris-wood/chris-wood.jpg",
-            "alt": "Chris Wood"
-        },
-        "slug": "chris-wood",
-        "portfolio": []
     }
 ]
