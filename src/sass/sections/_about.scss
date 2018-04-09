@@ -2,6 +2,9 @@
     background: $secondary;
     color: $white;
 
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
     &-desc {
         margin-bottom: auto;
         margin-top: auto;
@@ -18,5 +21,9 @@
         object-fit: cover;
         object-position: right;
         width: 100%;
+
+        &--col {
+            margin-top: 1rem;
+        }
     }
 }
