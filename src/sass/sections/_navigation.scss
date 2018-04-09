@@ -1,3 +1,70 @@
 .navbar {
-    
+    flex-wrap: wrap;
+
+    @include media-breakpoint-up(md) {
+        justify-content: center;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &--upper {
+        display: flex;
+        justify-content: center;
+
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+    }
+
+    &--brand {
+        display: none;
+        font-weight: $font-weight-bold;
+
+        @include media-breakpoint-up(md) {
+            display: inline;
+        }
+
+        &__upper {
+            font-size: 1.75rem;
+            margin-right: 0;
+        }
+    }
+
+    &--nav {
+        background: theme-color('light');
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        @include media-breakpoint-down(sm) {
+            display: none;
+            margin-bottom: -8px;
+            margin-left: -16px;
+            margin-right: -16px;
+            margin-top: 8px;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+    }
+
+    &--dropdown {
+        background: $white;
+        display: flex;
+        justify-content: center;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        z-index: 1000;
+
+        @include media-breakpoint-down(sm) {
+            flex-direction: column;
+            margin-left: -16px;
+            margin-right: -16px;
+            padding-left: 16px;
+            padding-right: 16px;
+            position: relative;
+            width: 100vw;
+        }
+    }
 }

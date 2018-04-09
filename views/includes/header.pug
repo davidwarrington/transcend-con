@@ -1,17 +1,28 @@
+- var title = event.name.split(' ');
+- var title_first = title.slice(0, 2).join(' ');
+- var title_last = title.slice(3, 6).join(' ');
 header
-    nav.navbar.navbar-expand-lg.navbar-light.bg-primary
-        a.navbar-brand(href='/')= event.name
+    .navbar--upper
+        a.navbar--brand__upper.navbar-brand(href="/")= title_first
 
-        button:button.navbar-toggler(data-toggle='collapse' data-target='#navbar' aria-controls='navbar' aria-expanded='false' aria-label='Toggle Navigation')
+    nav.navbar.navbar-expand-md.navbar-light.bg-primary
+        a.navbar-brand(href='/')
+            span.d-md-none= title_last
+            span.navbar--brand= event.name
+
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbar' aria-controls='navbar' aria-expanded='false' aria-label='Toggle Navigation')
             span.navbar-toggler-icon
         
-        .navbar-collapse.collapse#navbar
+        .navbar--nav.navbar-collapse.collapse#navbar
             ul.navbar-nav
                 li.nav-item
                     a(href="/").nav-link Home
-                for student in students
-                    li.nav-item
-                        - var url = `/student/${student.slug}`;
-                        a(href=url).nav-link= student.name
+                li.nav-item
+                    .nav-link.navbar--dropdown-toggle.dropdown-toggle Students
+                    .navbar--dropdown
+                        for student in students
+                            .nav-item
+                                - var url = `/student/${student.slug}`;
+                                a(href=url).nav-link= student.name
                 li.nav-item
                     a(href="/tickets").nav-link Tickets

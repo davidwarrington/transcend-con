@@ -53,6 +53,23 @@ if ($(selectors.display_type).length) {
     $(selectors.display_type).on('change', function() {
         els.video.toggle();
         els.image.toggle();
-    })
+    });
 }
+
+/**
+ * Navbar Selectors
+ */
+var nav_selectors = {
+    dropdown: '.navbar--dropdown-toggle',
+    dropdown_menu: '.navbar--dropdown'
+}
+
+if ($(nav_selectors.dropdown_menu.length)) {
+    $(nav_selectors.dropdown_menu).hide();
+
+    $(nav_selectors.dropdown).on('click', function() {
+        $(this).siblings(nav_selectors.dropdown_menu).slideToggle();
+    });
+}
+
 
