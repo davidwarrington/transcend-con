@@ -7849,6 +7849,12 @@ a.footer a:hover, a.footer a:focus {
         position: relative;
         width: 100vw; } }
 
+.portfolio--desc, .portfolio--link {
+  text-align: center; }
+
+.portfolio--desc, .portfolio--link, .portfolio--image {
+  display: block; }
+
 .social-bar {
   margin-bottom: 1rem;
   margin-top: 1rem;

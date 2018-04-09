@@ -1,0 +1,12 @@
+.portfolio{
+    &--desc, 
+    &--link {
+        text-align: center;
+    }
+
+    &--desc, 
+    &--link, 
+    &--image {
+        display: block;
+    }
+}

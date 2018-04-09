@@ -165,18 +165,29 @@ const newItemHandler = (req, res) => {
              */
             const portfolio = req.body;
             portfolio.slug = slugify(portfolio.name);
-            portfolio.image = {
-                url: `${portfolio.slug}/${portfolio.slug}${ext}`,
-                alt: portfolio.name
-            };
 
-            /**
-             * Next rename the uploaded 
-             * image in the temp directory.
-             */
-            const portfolio_dir = `./assets/img/${student.slug}/portfolio`;
-            fs.renameSync(temp_dest, portfolio_dir);
-            fs.renameSync(`${portfolio_dir}/temp${ext}`, `${portfolio_dir}/${student.slug}${ext}`);
+            if (portfolio.project_type === 'image') {
+                portfolio.image = {
+                    url: `${student.slug}/portfolio/${portfolio.slug}${ext}`,
+                    alt: portfolio.name
+                };
+
+                /**
+                 * Next rename the uploaded 
+                 * image in the temp directory.
+                 */
+                const portfolio_dir = `./assets/img/${student.slug}/portfolio`;
+
+                /**
+                 * If the portfolio directory 
+                 * doesn't already exists, 
+                 * rename the temp directory.
+                 */
+                if (!fs.existsSync(portfolio_dir)) {
+                    fs.renameSync(temp_dest, portfolio_dir);
+                }
+                fs.renameSync(`${temp_dest}/temp${ext}`, `${portfolio_dir}/${portfolio.slug}${ext}`);
+            }
 
             return_route += `/student/${student.slug}/portfolio/${portfolio.slug}`;
 

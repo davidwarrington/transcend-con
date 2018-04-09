@@ -11,20 +11,55 @@
             "alt": "Chris Wood"
         },
         "slug": "chris-wood",
-        "portfolio": []
+        "portfolio": [
+            {
+                "name": "Adobe Cloud Poster",
+                "description": "Designed for a brief for a reimagining of the Adobe cloud brand for D&AD.",
+                "project_type": "image",
+                "yt": "",
+                "slug": "adobe-cloud-poster",
+                "image": {
+                    "url": "chris-wood/portfolio/adobe-cloud-poster.jpg",
+                    "alt": "Adobe Cloud Poster"
+                }
+            },
+            {
+                "name": "Phobia's Ayslum",
+                "description": "A poster for my Professional Development that involved a Psychological Horror based around an abandoned asylum, where various phobias rule.",
+                "project_type": "image",
+                "yt": "",
+                "slug": "phobia's-ayslum",
+                "image": {
+                    "url": "chris-wood/portfolio/phobia's-ayslum.jpg",
+                    "alt": "Phobia's Ayslum"
+                }
+            },
+            {
+                "name": "Tardis",
+                "description": "A 3D model of the TARDIS from Doctor Who, being a fan of the sci fi tv show it made sense that one of my projects would coincide.",
+                "project_type": "image",
+                "yt": "",
+                "slug": "tardis",
+                "image": {
+                    "url": "chris-wood/portfolio/tardis.jpg",
+                    "alt": "Tardis"
+                }
+            }
+        ]
     },
     {
-        "name": "Daniel Taylor-Crossland",
+        "name": "Daniel Taylor Crossland",
         "role": "Games Designer",
-        "bio": "From an early age Daniel has had a solid interest in gaming and decided to pursue this further when he first attended college with a game's design course at lvl 3. Learning more about the industry through this course he developed his skills in design and conceptual art and is now focusing on the final year of his degree.\r\n\r\nThrough progression through college he has become proficient in various software and can effectively use software such as programmes in the Adobe suite such as premiere and photoshop, other software include unity and 3DS max. Despite a focus on game's he has had experience in other areas such as film and graphic design.",
+        "bio": "\r\nFrom an early age Daniel has had a solid interest in gaming and decided to pursue this further when he first attended college with a game's design course at lvl 3. Learning more about the industry through this course he developed his skills in design and conceptual art and is now focusing on the final year of his degree.\r\n\r\nThrough progression through college he has become proficient in various software and can effectively use software such as programmes in the Adobe suite such as premiere and photoshop, other software include unity and 3DS max. Despite a focus on game's he has had experience in other areas such as film and graphic design.",
         "twitter": "",
         "facebook": "",
         "email": "",
+        "slug": "daniel-taylor-crossland",
         "image": {
             "url": "daniel-taylor-crossland/daniel-taylor-crossland.jpg",
-            "alt": "Daniel Taylor-Crossland"
+            "alt": "Daniel Taylor Crossland"
         },
-        "slug": "daniel-taylor-crossland"
+        "portfolio": []
     },
     {
         "name": "Lewis Singleton",
@@ -41,21 +76,42 @@
         "portfolio": [
             {
                 "name": "Showreel",
-                "slug": "showreel",
+                "description": "A compilation of the work Lewis has produced.",
+                "project_type": "video",
+                "yt": "https://youtu.be/zUNzw4D5Ylk",
+                "slug": "showreel"
+            },
+            {
+                "name": "Couch",
+                "description": "An animation that was produced in Y1 of the BA in Contemporary Media, Design And Production. The story follows a newly wedded couple who move into their new house and their cycle of life.",
+                "project_type": "video",
+                "yt": "https://youtu.be/1OuGS-JjahQ",
+                "slug": "couch"
+            },
+            {
+                "name": "Station Poster",
+                "description": "A poster for Lewis’ animated short film Station.",
+                "project_type": "image",
+                "yt": "",
+                "slug": "station-poster",
                 "image": {
-                    "url": null
+                    "url": "lewis-singleton/portfolio/station-poster.jpg",
+                    "alt": "Station Poster"
                 }
             },
             {
-                "name": "The Ticket",
-                "description": "Ticket Proj.\r\n\r\nProj.",
-                "project_type": "image",
-                "yt": "",
-                "slug": "the-ticket",
-                "image": {
-                    "url": "lewis-singleton/portfolio/the-ticket.jpg",
-                    "alt": "The Ticket"
-                }
+                "name": "Eating Soup with a Fork",
+                "description": "A Documentary By Lewis centred around living with Obsessive Compulsive Disorder.",
+                "project_type": "video",
+                "yt": "https://youtu.be/fNdx9iAaOgE",
+                "slug": "eating-soup-with-a-fork"
+            },
+            {
+                "name": "Christmas Cards 2015 & 2017",
+                "description": "Christmas E-cards created for East Riding College.",
+                "project_type": "video",
+                "yt": "https://youtu.be/doDGCd_GkBE",
+                "slug": "christmas-cards-2015-&-2017"
             }
         ]
     },
@@ -66,10 +122,33 @@
         "twitter": "",
         "facebook": "",
         "email": "samueljamesmilner@hotmail.com",
+        "slug": "sam-milner",
         "image": {
             "url": "sam-milner/sam-milner.jpg",
             "alt": "Sam Milner"
         },
-        "slug": "sam-milner"
+        "portfolio": [
+            {
+                "name": "Showreel",
+                "description": "A compilation of graphic design pieces that Sam has worked on.",
+                "project_type": "video",
+                "yt": "https://youtu.be/7_t9iB2KsZs",
+                "slug": "showreel"
+            },
+            {
+                "name": "The Dangers of Facebook",
+                "description": "A documentary from the first year of the BA in contemporary media, design and production. It is a 5-minute video showing the dangers within the social media platform of Facebook.",
+                "project_type": "video",
+                "yt": "https://youtu.be/RtvcQGozuq4",
+                "slug": "the-dangers-of-facebook"
+            },
+            {
+                "name": "Rooms Design Studio Advertisement",
+                "description": "A quick 30-second advertisement which was produced, filmed and edited by Sam.",
+                "project_type": "video",
+                "yt": "https://youtu.be/VS4ULjloHh0",
+                "slug": "rooms-design-studio-advertisement"
+            }
+        ]
     }
 ]
