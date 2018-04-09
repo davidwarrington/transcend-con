@@ -43,6 +43,22 @@ block page_content
     if student.portfolio
         .container
             .row
+                //- The grid used to display the 
+                //- portfolio repeats itself every 3 
+                //- items. The column sizes for 
+                //- each grid item are: 12, 6, 6...
+                //- 
+                //- If the portfolio size is not 
+                //- divisible by 3, the grid will 
+                //- adapt depending on the result of 
+                //- portfolio size % 3. If there are 
+                //- 5 portfolio items, for example, 
+                //- the grid will begin run normally 
+                //- once, then begin at the second 
+                //- item. Resulting in a grid of: 
+                //- 12, 6, 6, 6, 6.
+                //- If there are 4 grid items, the 
+                //- resulting grid will be: 6, 6, 6, 6.
                 - var n = 0;
                 - var modulo = student.portfolio.length % 3;
                 for portfolio in student.portfolio

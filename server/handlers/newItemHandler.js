@@ -166,6 +166,12 @@ const newItemHandler = (req, res) => {
             const portfolio = req.body;
             portfolio.slug = slugify(portfolio.name);
 
+            /**
+             * Only alter files if the project 
+             * type is set to 'image', as the 
+             * 'video' project type does not 
+             * require a file upload.
+             */
             if (portfolio.project_type === 'image') {
                 portfolio.image = {
                     url: `${student.slug}/portfolio/${portfolio.slug}${ext}`,

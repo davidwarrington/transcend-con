@@ -242,6 +242,11 @@ const editItemHandler = (req, res) => {
             }
             fs.renameSync(`${portfolio_dir}/${portfolio_slug}${ext}`, `${portfolio_dir}/${portfolio.slug}${ext}`);
 
+            /**
+             * The route that the user will 
+             * be redirected to is that of 
+             * the portfolio page.
+             */
             return_route += `/student/${student.slug}/portfolio/${portfolio.slug}`;
 
             students[student_index].portfolio[portfolio_index] = portfolio;
@@ -253,6 +258,11 @@ const editItemHandler = (req, res) => {
          */
         students.sort(compare);
 
+        /**
+         * Rewrite the 
+         * students.json 
+         * data file.
+         */
         fs.writeFileSync(`data/students.json`, JSON.stringify(students, null, 4), err => {
             if (err) throw err;
         });
