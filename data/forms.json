@@ -67,7 +67,8 @@
                     "label": "Video",
                     "value": "video"
                 }
-            ]
+            ],
+            "required": true
         },
         "image": {
             "label": "Project Image",
@@ -77,6 +78,7 @@
         "yt": {
             "label": "Project Youtube URL",
             "id": "yt",
+            "description": "To retrieve a YouTube embed URL, visit the video page, click \"Share\" and then copy the URL provided.",
             "type": "url"
         }
     },

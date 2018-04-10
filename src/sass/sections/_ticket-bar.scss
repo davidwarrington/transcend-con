@@ -1,0 +1,15 @@
+.ticket-bar{
+    background: $secondary;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+
+    &--button {
+        border-radius: 0;
+        padding-bottom: 1rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        padding-top: 1rem;
+    }
+}

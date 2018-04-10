@@ -5,11 +5,12 @@ block title
 
 block page_content
     //- The page name should be that of the student.
-    h1= student.name
+    .student--title
+        h1= student.name
 
-    .student-bio.container
+    .student--bio.container
         .row
-            .col-10.col-md-12.mx-auto
+            .col-10.mx-auto
                 //- We split the student's bio into an array.
                 //- The .split() method allows us to choose what 
                 //- to split the array on. In this case we are 
@@ -32,13 +33,19 @@ block page_content
                     span.h5 Contact #{first}: 
                         if student.email
                             - var email = `mailto:${student.email}`;
-                            a(href=email).social-link Email
+                            a(href=email).social-link
+                                i.far.fa-envelope
+                                span.sr-only Email
                         if student.facebook
                             - var facebook = `https://facebook.com/${student.facebook}`;
-                            a(href=facebook).social-link Facebook
+                            a(href=facebook).social-link
+                                i.fab.fa-facebook
+                                span.sr-only Facebook
                         if student.twitter
                             - var twitter = `https://twitter.com/${student.twitter}`
-                            a(href=twitter).social-link Twitter
+                            a(href=twitter).social-link
+                                i.fab.fa-twitter
+                                span.sr-only Twitter
                     
     
     //- Next we check if the student has any portfolio
@@ -68,10 +75,15 @@ block page_content
                     - var col_size = n !== 0 ? 'col-md-6' : null;
                     .portfolio(class='col-12' class=col_size)
                         if portfolio.project_type === 'image'
-                            img.portfolio--image(src=portfolio.image.url, alt=portfolio.image.alt)
-                        else if portfolio.project_type === 'video'
-                            .embed-responsive.embed-responsive-16by9= portfolio.yt
+                            - var img_url = `/assets/img/${portfolio.image.url}`;
+                            .portfolio--image(style=`background-image: url(/assets/img/${portfolio.image.url})`, alt=portfolio.image.alt)
 
-                        a.portfolio--link.h3(href="#")= portfolio.name
-                        span.portfolio--desc= portfolio.description
+                        else if portfolio.project_type === 'video'
+                            .embed-responsive.embed-responsive-16by9
+                                - var yt = portfolio.yt.split('/')
+                                iframe.embed-responsive-item(src=`https://www.youtube.com/embed/${yt[yt.length - 1]}`)
+                        
+                        .portfolio--details
+                            a.portfolio--link.h3(href="#")= portfolio.name
+                            span.portfolio--desc= portfolio.description
                     - if (n < 2) { n++ } else { if (modulo === 2) { n = 1 } else if (modulo === 1) { n = 0 }};

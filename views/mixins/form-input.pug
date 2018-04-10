@@ -5,7 +5,7 @@ mixin form-input(input, obj)
     //- for the 'image' property to 
     //- prevent rendering issues.
     - var obj = obj || { "image": { "url": null }};
-    - var required = input.required ? 'required' : 'false';
+    - var required = input.required ? 'required' : false;
     .form-group
         //- .replace() is passed two values, a 
         //- regExp that matches all instances of 
@@ -37,7 +37,7 @@ mixin form-input(input, obj)
             //- the input is required. Otherwise it is not 
             //- required because there is already an image 
             //- associated with it.
-            - required = required && !obj[input.id].url ? 'required' : 'false';
+            - required = required && !obj[input.id].url ? 'required' : false;
             input.form-control-file(type=input.type name=input.id id=input.id required=required)
             
         else if input.type === 'select'

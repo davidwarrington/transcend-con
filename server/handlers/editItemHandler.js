@@ -17,8 +17,8 @@ let students = require('../../data/students.json');
  * Import the File Filter to 
  * be used my Multer.
  */
-const checkFileTypeHandler = require('../handlers/checkFileTypeHandler');
-const slugify = require('./slugify');
+const checkFileTypeHandler = require('./checkFileTypeHandler');
+const slugify              = require('./slugify');
 
 const editItemHandler = (req, res) => {
     event    = reload('../../data/event.json');
@@ -233,14 +233,14 @@ const editItemHandler = (req, res) => {
              * the student image url if 
              * this is the case.
              */
-            if (!ext) {
+            if (ext) {
                 const files = fs.readdirSync(portfolio_dir);
                 const file = files.filter(file => path.parse(file).name === portfolio_slug)[0];
                 ext = path.extname(file);
 
                 portfolio.image.url = `${student.slug}/portfolio/${portfolio.slug}${ext}`;
+                fs.renameSync(`${portfolio_dir}/${portfolio_slug}${ext}`, `${portfolio_dir}/${portfolio.slug}${ext}`);
             }
-            fs.renameSync(`${portfolio_dir}/${portfolio_slug}${ext}`, `${portfolio_dir}/${portfolio.slug}${ext}`);
 
             /**
              * The route that the user will 

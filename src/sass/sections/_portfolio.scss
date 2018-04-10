@@ -1,4 +1,25 @@
-.portfolio{
+.portfolio {
+    &--image {
+        background-position: top center;
+        background-size: 100% auto;
+        transition: $transition-long;
+    
+        &:before {
+            content: '';
+            display: block;
+            padding-top: 56.25%;
+        }
+    
+        &:hover {
+            background-size: 110% auto;
+        }
+    }
+
+    &--details {
+        padding-bottom: 55px;
+        padding-top: 35px;
+    }
+
     &--desc, 
     &--link {
         text-align: center;

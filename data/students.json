@@ -30,7 +30,7 @@
                 "yt": "",
                 "slug": "phobia's-ayslum",
                 "image": {
-                    "url": "chris-wood/portfolio/phobia's-ayslum.jpg",
+                    "url": "chris-wood/portfolio/phobias-ayslum.jpg",
                     "alt": "Phobia's Ayslum"
                 }
             },
@@ -79,7 +79,11 @@
                 "description": "A compilation of the work Lewis has produced.",
                 "project_type": "video",
                 "yt": "https://youtu.be/zUNzw4D5Ylk",
-                "slug": "showreel"
+                "slug": "showreel",
+                "image": {
+                    "url": "lewis-singleton/portfolio/showreelundefined",
+                    "alt": "Showreel"
+                }
             },
             {
                 "name": "Couch",

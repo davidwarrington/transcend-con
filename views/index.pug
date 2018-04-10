@@ -5,7 +5,11 @@ block header
 
 block content    
     block page_content
+        .ticket-bar
+            .ticket-bar--button.btn.btn-primary(href=event.ticket_link) GET YOUR TICKET HERE!
+        
         .container-fluid
+
             .student-list.row
                 for student in students
                     - var bg_image = `background-image: url('/assets/img/${student.image.url}')`;
@@ -44,9 +48,13 @@ block content
                 .col-12
                     span.h4 Follow us here:
                         - var twitter = `https://twitter.com/${event.twitter}`
-                        a(href=twitter).social-link Twitter
+                        a(href=twitter).social-link
+                            i.fab.fa-twitter
+                            span.sr-only Twitter
                         - var facebook = `https://facebook.com/${event.facebook}`;
-                        a(href=facebook).social-link Facebook
+                        a(href=facebook).social-link
+                            i.fab.fa-facebook
+                            span.sr-only Facebook
         
     include includes/footer
                     

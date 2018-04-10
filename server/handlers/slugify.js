@@ -4,6 +4,6 @@
  * and replacing all spaces 
  * with hyphens.
  */
-const slugify = text => text.toLowerCase().replace(/ /g, '-');
+const slugify = text => text.toLowerCase().replace(/ /g, '-').replace(/'/g, '');
 
 module.exports = slugify;

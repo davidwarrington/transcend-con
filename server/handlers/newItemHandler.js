@@ -15,10 +15,12 @@ let students = require('../../data/students.json');
 
 /**
  * Import the File Filter to 
- * be used my Multer.
+ * be used my Multer, the 
+ * slugify handler for 
+ * creating file slugs.
  */
-const checkFileTypeHandler = require('../handlers/checkFileTypeHandler');
-const slugify = require('./slugify');
+const checkFileTypeHandler = require('./checkFileTypeHandler');
+const slugify              = require('./slugify');
 
 const newItemHandler = (req, res) => {
     event    = reload('../../data/event.json');
