@@ -192,7 +192,7 @@ const newItemHandler = (req, res) => {
                 if (!fs.existsSync(portfolio_dir)) {
                     fs.renameSync(temp_dest, portfolio_dir);
                 }
-                fs.renameSync(`${temp_dest}/temp${ext}`, `${portfolio_dir}/${portfolio.slug}${ext}`);
+                fs.renameSync(`${portfolio_dir}/temp${ext}`, `${portfolio_dir}/${portfolio.slug}${ext}`);
             }
 
             return_route += `/student/${student.slug}/portfolio/${portfolio.slug}`;

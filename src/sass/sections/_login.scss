@@ -1,0 +1,21 @@
+.login {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+
+    &--container {
+        background: gray('200');
+        border-radius: $border-radius;
+        padding: 2rem;
+        text-align: center;
+    }
+}
+
+.login--heading {
+    margin-bottom: 2rem;
+
+    &:after {
+        content: none;
+    }
+}

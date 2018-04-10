@@ -1,5 +1,11 @@
 mixin form-input(input, obj)
+    //- If there is no student or 
+    //- portfolio object passed to 
+    //- the mixin, create a sub-object 
+    //- for the 'image' property to 
+    //- prevent rendering issues.
     - var obj = obj || { "image": { "url": null }};
+    - var required = input.required ? 'required' : 'false';
     .form-group
         //- .replace() is passed two values, a 
         //- regExp that matches all instances of 
@@ -23,13 +29,19 @@ mixin form-input(input, obj)
         
         //- Create the inputs depending on what their type value is set to.
         if input.type === 'textarea'
-            textarea.form-control(name=input.id id=input.id rows="6")= obj[input.id]
+            textarea.form-control(name=input.id id=input.id rows="6" required=required)= obj[input.id]
             
         else if input.type === 'file'
-            input.form-control-file(type=input.type name=input.id id=input.id)
+            //- If there is no currently assigned image, 
+            //- and the input was previously set to required, 
+            //- the input is required. Otherwise it is not 
+            //- required because there is already an image 
+            //- associated with it.
+            - required = required && !obj[input.id].url ? 'required' : 'false';
+            input.form-control-file(type=input.type name=input.id id=input.id required=required)
             
         else if input.type === 'select'
-            select.form-control(type=input.type name=input.id id=input.id value=obj[input.id])
+            select.form-control(type=input.type name=input.id id=input.id value=obj[input.id] required=required)
                 for option in input.options
                     //- Determine which dropdown option to 
                     //- give the "selected" attribute to.
@@ -40,7 +52,7 @@ mixin form-input(input, obj)
                         option(value=option.value)= option.label
                         
         else if input.type !== 'heading'
-            input.form-control(type=input.type name=input.id id=input.id value=obj[input.id])
+            input.form-control(type=input.type name=input.id id=input.id value=obj[input.id] required=required)
 
         //- Any input with a description should have that included after the input
         if input.description
@@ -58,4 +70,4 @@ mixin form-input(input, obj)
         .form-group
             - var alt_label = `${input.id}_alt`
             label(for=alt_label)= `Image Description`
-            input.form-control(type="text" name=alt_label id=alt_label value=obj[input.id].alt)
+            input.form-control(type="text" name=alt_label id=alt_label value=obj[input.id].alt required=required)

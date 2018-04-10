@@ -112,7 +112,7 @@ router.get('/student/:student', (req, res) => {
     const data = { 
         dash_view: 'student',
         errors: req.session.errors ? req.session.errors : {},
-        // event: event,
+        event: event,
         form: form,
         students: students,
         student: student
@@ -168,7 +168,7 @@ router.get('/student/:student/portfolio/:portfolio', (req, res) => {
     const data = { 
         dash_view: 'portfolio',
         errors: req.session.errors ? req.session.errors : {},
-        // event: event,
+        event: event,
         form: form,
         student: student,
         students: students,

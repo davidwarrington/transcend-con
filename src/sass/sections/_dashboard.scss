@@ -33,6 +33,16 @@
     }
 }
 
+.dash--heading {
+    border-bottom: 1px solid gray('500');
+    padding-bottom: 1rem;
+    text-align: left;
+
+    &:after {
+        content: none;
+    }
+}
+
 .dash-nav {
     background: theme-color('light');
 

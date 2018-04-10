@@ -1,6 +1,10 @@
 //- This view uses the layout template as a base
 extends layout
 
+//- This block allows us to alter the page title when this view is rendered
+block title
+    title Admin Dashboard | #{event.name}
+
 //- We create the dashboard within the layout template's 'content' block
 block content
     .dash-container.container-fluid
@@ -30,23 +34,24 @@ block content
                             
                 //- Dashboard Form
                 .dash-forms.col-12.col-md-9.pt-3
-                    if dash_view === 'event'                        
+                    if dash_view === 'event'
+                        h1.dash--heading Editing event details                    
                         include includes/forms/event-form
                     else if dash_view === 'student'
                         if student
-                            h2 Editing #{student.name}
+                            h1.dash--heading Editing #{student.name}
                             - var action = `/admin/student/${student.slug}/delete`;                        
                             form(method="POST" action=action)
                                 button.btn.btn-danger(type="submit" action=action) Delete
                         else
-                            h2 Creating a new student
+                            h1.dash--heading Creating a new student
                         include includes/forms/student-form
                     else if dash_view === 'portfolio'
                         if portfolio
-                            h2 Editing #{portfolio.name} by #{student.name}
+                            h1.dash--heading Editing #{portfolio.name} by #{student.name}
                             - var action = `/admin/student/${student.slug}/portfolio/${portfolio.slug}/delete`;                        
                             form(method="POST" action=action)
                                 button.btn.btn-danger(type="submit") Delete
                         else
-                            h2 Creating a new portfolio item for #{student.name}
+                            h1.dash--heading Creating a new portfolio item for #{student.name}
                         include includes/forms/portfolio-form

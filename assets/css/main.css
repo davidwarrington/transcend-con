@@ -7707,6 +7707,13 @@ h1, h2 {
     right: 15px;
     top: 0; }
 
+.dash--heading {
+  border-bottom: 1px solid #adb5bd;
+  padding-bottom: 1rem;
+  text-align: left; }
+  .dash--heading:after {
+    content: none; }
+
 .dash-nav {
   background: #f8f9fa; }
   .dash-nav--list {
@@ -7766,6 +7773,32 @@ h1, h2 {
 
 a.footer a:hover, a.footer a:focus {
   color: #0a0c0d !important; }
+
+.login {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .login--container {
+    background: #e9ecef;
+    -webkit-border-radius: 0.25rem;
+            border-radius: 0.25rem;
+    padding: 2rem;
+    text-align: center; }
+
+.login--heading {
+  margin-bottom: 2rem; }
+  .login--heading:after {
+    content: none; }
 
 .navbar {
   -webkit-flex-wrap: wrap;

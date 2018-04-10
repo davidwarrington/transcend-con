@@ -1,9 +1,12 @@
 extends layout
 
+block title
+    title Login
+
 block content
-    .container
-        .jumbotron
-            h1 Admin Login
+    .login.container-fluid
+        .login--container
+            h1.login--heading Admin Login
 
             a.btn.btn-primary(href="/twitter/login") Login using Twitter
             if error

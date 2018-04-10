@@ -1,5 +1,8 @@
 extends index
 
+block title
+    title #{student.name} | #{event.name}
+
 block page_content
     //- The page name should be that of the student.
     h1= student.name
