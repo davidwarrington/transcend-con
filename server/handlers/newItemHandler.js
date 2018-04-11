@@ -3,7 +3,7 @@ const multer = require('multer');
 const path   = require('path');
 const reload = require('require-reload')(require);
 
-const compare = require('../handlers/sortArray');
+const compare = require('./sortArray');
 
 /**
  * Import data to be rendered 

@@ -97,13 +97,16 @@ const deleteItemHandler = (req, res) => {
          * image.
          */
         const current_portfolio = student.portfolio.filter(portfolio => portfolio.slug === req.params.portfolio)[0];
-        const current_img = `assets/img/${current_portfolio.image.url}`;
-        if (fs.existsSync(current_img)) {
-            const image_url = `assets/img/${current_portfolio.image.url}`;
-            fs.unlink(image_url, err => {
-                if (err) throw err;
-            });
+        if (current_portfolio.img) {
+           const current_img = `assets/img/${current_portfolio.image.url}`;
+            if (fs.existsSync(current_img)) {
+                fs.unlink(current_img, err => {
+                    if (err) throw err;
+                });
+            }
         }
+        
+        
         
 
         /**
