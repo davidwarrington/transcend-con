@@ -13,9 +13,20 @@
  * in scripts.
  */
 var selectors = {
+    menu_button: '#dash-nav--toggle',
+    menu: '#dash-nav',
     display_type    : '#project_type',
     dropdown_toggle : '.dash-nav--dropdown-toggle',
     dropdown_menu   : '.dash-nav--dropdown-menu'
+}
+
+/**
+ * Handle dash-nav menu.
+ */
+if ($(selectors.menu_button).length) {
+    $(selectors.menu_button).on('click', function() {
+        $(selectors.menu).slideToggle();
+    })
 }
 
 /**

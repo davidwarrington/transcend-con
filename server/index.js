@@ -68,6 +68,11 @@ app.use('/twitter', authRouter);
 
 /**
  * PassportJS set up
+ * 
+ * .serializeUser() is used to 
+ * create a key for retrieving 
+ * the users data later with the 
+ * .deserializeUser() method.
  */
 passport.use(TwitterStrategy);
 passport.serializeUser((user, callback) => callback(null, user));

@@ -7678,6 +7678,9 @@ h1, h2 {
 .dash-header {
   background: #495057;
   color: #fff; }
+  @media (min-width: 768px) {
+    .dash-header .navbar-toggler {
+      display: none; } }
   .dash-header .container {
     display: -webkit-box;
     display: -webkit-flex;
@@ -7694,28 +7697,30 @@ h1, h2 {
           align-self: center;
   margin: 0; }
 
-.dash-content {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  position: relative; }
-  .dash-content .row {
-    bottom: 0;
-    left: 15px;
-    position: absolute;
-    right: 15px;
-    top: 0; }
-
 .dash--heading {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-bottom: 1px solid #adb5bd;
-  padding-bottom: 1rem;
-  text-align: left; }
-  .dash--heading:after {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1rem; }
+  .dash--heading h1:after {
     content: none; }
 
 .dash-nav {
-  background: #f8f9fa; }
+  background: #f8f9fa;
+  display: none; }
+  @media (min-width: 768px) {
+    .dash-nav {
+      display: block; } }
   .dash-nav--list {
     display: -webkit-box;
     display: -webkit-flex;

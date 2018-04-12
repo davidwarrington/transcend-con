@@ -13,12 +13,14 @@ block content
             .container
                 span.h4.dash-welcome Hello Admin
                 a.btn.btn-logout(href="/twitter/logout") Logout
+                button.navbar-toggler.navbar-dark#dash-nav--toggle
+                        span.navbar-toggler-icon
 
         .dash-content.container
             .row
                 //- Dashboard navigation
-                nav.dash-nav.col-12.col-md-3
-                    ul.dash-nav--list.nav.pt-3
+                nav.dash-nav.col-12.col-md-3#dash-nav
+                    ul.dash-nav--list.nav.pt-3.collapse
                         li.dash-nav--item.nav-item
                             a(href="/admin").dash-nav--link.nav-link Event
                         hr.w-100
@@ -35,23 +37,28 @@ block content
                 //- Dashboard Form
                 .dash-forms.col-12.col-md-9.pt-3
                     if dash_view === 'event'
-                        h1.dash--heading Editing event details                    
+                        .dash--heading
+                            h1 Editing event details                    
                         include includes/forms/event-form
                     else if dash_view === 'student'
                         if student
-                            h1.dash--heading Editing #{student.name}
-                            - var action = `/admin/student/${student.slug}/delete`;                        
-                            form(method="POST" action=action)
-                                button.btn.btn-danger(type="submit" action=action) Delete
+                            .dash--heading
+                                h1 Editing #{student.name}
+                                - var action = `/admin/student/${student.slug}/delete`;                        
+                                form(method="POST" action=action)
+                                    button.btn.btn-danger(type="submit" action=action) Delete
                         else
-                            h1.dash--heading Creating a new student
+                            .dash--heading
+                                h1 Creating a new student
                         include includes/forms/student-form
                     else if dash_view === 'portfolio'
                         if portfolio
-                            h1.dash--heading Editing #{portfolio.name} by #{student.name}
-                            - var action = `/admin/student/${student.slug}/portfolio/${portfolio.slug}/delete`;                        
-                            form(method="POST" action=action)
-                                button.btn.btn-danger(type="submit") Delete
+                            .dash--heading
+                                h1 Editing #{portfolio.name} by #{student.name}
+                                - var action = `/admin/student/${student.slug}/portfolio/${portfolio.slug}/delete`;                        
+                                form(method="POST" action=action)
+                                    button.btn.btn-danger(type="submit") Delete
                         else
-                            h1.dash--heading Creating a new portfolio item for #{student.name}
+                            .dash--heading
+                                h1 Creating a new portfolio item for #{student.name}
                         include includes/forms/portfolio-form

@@ -8,6 +8,12 @@
 .dash-header {
     background: gray('700');
     color: $white;
+
+    .navbar-toggler {
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+    }
     
     .container {
         display: flex;
@@ -20,31 +26,25 @@
     margin: 0;
 }
 
-.dash-content {
-    flex: 1;
-    position: relative;
-
-    .row {
-        bottom: 0;
-        left: 15px;
-        position: absolute; 
-        right: 15px;
-        top: 0;
-    }
-}
-
 .dash--heading {
+    align-items: center;
     border-bottom: 1px solid gray('500');
-    padding-bottom: 1rem;
-    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
 
-    &:after {
+    h1:after {
         content: none;
     }
 }
 
 .dash-nav {
     background: theme-color('light');
+    display: none;
+
+    @include media-breakpoint-up(md) {
+        display: block;
+    }
 
     &--list {
         display: flex;
