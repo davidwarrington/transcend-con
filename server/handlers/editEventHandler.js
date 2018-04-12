@@ -106,7 +106,7 @@ const editItemHandler = (req, res) => {
          * event.json 
          * data file.
          */
-        fs.writeFileSync(`data/event.json`, JSON.stringify(event, null, 4), err => {
+        fs.writeFile(`data/event.json`, JSON.stringify(event, null, 4), err => {
             if (err) throw err;
         });
 

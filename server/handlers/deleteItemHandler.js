@@ -142,7 +142,7 @@ const deleteItemHandler = (req, res) => {
      * for indentation. Using 
      * indentation increases readability.
      */
-    fs.writeFileSync(`data/students.json`, JSON.stringify(students, null, 4), err => {
+    fs.writeFile(`data/students.json`, JSON.stringify(students, null, 4), err => {
         if (err) throw err;
     });
     

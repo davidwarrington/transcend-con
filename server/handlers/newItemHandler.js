@@ -50,7 +50,7 @@ const newItemHandler = (req, res) => {
     /**
      * Multer Configuration
      */
-    const temp_dest = './assets/img/temp';
+    const temp_dest = type === 'student' ? './assets/img/temp' : `./assets/img/${req.params.student}/portfolio`;
     const storage = multer.diskStorage({
         /**
          * Set the destination for 
@@ -208,7 +208,7 @@ const newItemHandler = (req, res) => {
          */
         students.sort(compare);
 
-        fs.writeFileSync(`data/students.json`, JSON.stringify(students, null, 4), err => {
+        fs.writeFile(`data/students.json`, JSON.stringify(students), err => {
             if (err) throw err;
         });
 

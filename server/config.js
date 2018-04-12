@@ -3,7 +3,7 @@ const config = {
      * The passport configuration object.
      */
     passport: {
-        callbackURL: 'http://localhost:3000/twitter/return',
+        callbackURL: `/twitter/return`,
         consumerKey: process.env.CONSUMER_KEY,
         consumerSecret: process.env.CONSUMER_SECRET
     },

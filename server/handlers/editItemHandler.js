@@ -263,7 +263,7 @@ const editItemHandler = (req, res) => {
          * students.json 
          * data file.
          */
-        fs.writeFileSync(`data/students.json`, JSON.stringify(students, null, 4), err => {
+        fs.writeFile(`data/students.json`, JSON.stringify(students, null, 4), err => {
             if (err) throw err;
         });
 
