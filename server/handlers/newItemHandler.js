@@ -212,6 +212,12 @@ const newItemHandler = (req, res) => {
             if (err) throw err;
         });
 
+        /**
+         * Update event and students data in cache
+         */
+        event    = reload('../../data/event.json');
+        students = reload('../../data/students.json');
+
         res.redirect(return_route);
     });
 };

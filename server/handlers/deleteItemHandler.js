@@ -147,6 +147,12 @@ const deleteItemHandler = (req, res) => {
     });
     
     /**
+     * Update event and students data in cache
+     */
+    event    = reload('../../data/event.json');
+    students = reload('../../data/students.json');
+    
+    /**
      * Finally, redirect the user to 
      * the admin route.
      */
