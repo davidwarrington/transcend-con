@@ -3,9 +3,20 @@
 This project was created by David Warrington, for the East Riding College Transcend HE Conference 2018. It can be seen live here: [159.65.24.94](http://159.65.24.94/).
 
 ## Table of Contents
+- [How to Run](#how-to-run)
+    - [Changing Port](#changing-port)
 - [How to Develop](#how-to-develop)
 - [Server Structure](#server-structure)
 - [dotenv](#dotenv)
+
+## How to Run
+To run this project, use the following command: `node server`.
+
+### Changing server port
+If the server needs to run on a port other than the default (3000), this can be done in one of two ways:
+1. Open `server/config.js` and change the port property in the config to the one that you wish to use. For example, you can run it on port 8000 by changing the line to: `port: process.env.PORT || 8000,`.
+2. The recommended method, for changing the port to run in a production environment is to change the port via the terminal command. If you wanted to run the server on port 80, for example, you would run the following command: `PORT=80 node server`.
+    - If you wish to add a more permanent method of keeping this port, rather than relying on remembering which port to use, add a new script to the scripts object in `package.json`. The line should look something like this: `production: PORT=80 node server`. This will allow you to run the same command every time by running `npm run production`. A better solution might be to name the script `start`, this way it can be started with the `npm start` command.
 
 ## How to Develop
 
