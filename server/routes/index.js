@@ -8,6 +8,9 @@ const data = {
 }
 
 router.get('/', (req, res) => {
+    data.event = reload('../../data/event.json');
+    data.students = reload('../../data/students.json');
+    
     res.render('index', data);
 });
 
