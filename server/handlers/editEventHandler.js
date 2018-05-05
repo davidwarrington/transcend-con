@@ -108,13 +108,13 @@ const editItemHandler = (req, res) => {
          */
         fs.writeFile(`data/event.json`, JSON.stringify(event, null, 4), err => {
             if (err) throw err;
-        });
 
-        /**
-         * Update event and students data in cache
-         */
-        event    = reload('../../data/event.json');
-        students = reload('../../data/students.json');
+            /**
+             * Update event and students data in cache
+             */
+            event    = reload('../../data/event.json');
+            students = reload('../../data/students.json');
+        });
 
         res.redirect('/admin');
     });

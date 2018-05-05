@@ -23,9 +23,6 @@ const checkFileTypeHandler = require('./checkFileTypeHandler');
 const slugify              = require('./slugify');
 
 const newItemHandler = (req, res) => {
-    event    = reload('../../data/event.json');
-    students = reload('../../data/students.json');
-
     /**
      * Create an extension variable 
      * for getting the file extension 
@@ -210,13 +207,13 @@ const newItemHandler = (req, res) => {
 
         fs.writeFile(`data/students.json`, JSON.stringify(students), err => {
             if (err) throw err;
-        });
 
-        /**
-         * Update event and students data in cache
-         */
-        event    = reload('../../data/event.json');
-        students = reload('../../data/students.json');
+            /**
+             * Update event and students data in cache
+             */
+            event    = reload('../../data/event.json');
+            students = reload('../../data/students.json');
+        });        
 
         res.redirect(return_route);
     });

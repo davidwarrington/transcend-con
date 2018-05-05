@@ -29,11 +29,6 @@ const deleteItemHandler = (req, res) => {
     let return_route = '/admin';
 
     /**
-     * Reload the students data file.
-     */
-    students = reload('../../data/students.json');
-
-    /**
      * Check router parameters to 
      * decide what is being deleted.
      * 
@@ -144,13 +139,15 @@ const deleteItemHandler = (req, res) => {
      */
     fs.writeFile(`data/students.json`, JSON.stringify(students, null, 4), err => {
         if (err) throw err;
+
+        /**
+         * Update event and students data in cache
+         */
+        event    = reload('../../data/event.json');
+        students = reload('../../data/students.json');
     });
     
-    /**
-     * Update event and students data in cache
-     */
-    event    = reload('../../data/event.json');
-    students = reload('../../data/students.json');
+    
     
     /**
      * Finally, redirect the user to 
