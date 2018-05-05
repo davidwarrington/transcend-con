@@ -239,7 +239,7 @@ const editItemHandler = (req, res) => {
              * the student image url if 
              * this is the case.
              */
-            if (ext) {
+            if (!ext) {
                 const files = fs.readdirSync(portfolio_dir);
                 const file = files.filter(file => path.parse(file).name === portfolio_slug)[0];
                 ext = path.extname(file);

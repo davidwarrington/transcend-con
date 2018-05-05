@@ -158,8 +158,6 @@ const newItemHandler = (req, res) => {
                 }
             })[0];
 
-            console.log(student);
-
             /**
              * Create an object with all 
              * of the req.body values added.
