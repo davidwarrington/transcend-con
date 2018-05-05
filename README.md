@@ -4,7 +4,7 @@ This project was created by David Warrington, for the East Riding College Transc
 
 ## Table of Contents
 - [How to Run](#how-to-run)
-    - [Changing Port](#changing-port)
+    - [Changing Port](#changing-server-port)
 - [How to Develop](#how-to-develop)
 - [Server Structure](#server-structure)
 - [dotenv](#dotenv)
