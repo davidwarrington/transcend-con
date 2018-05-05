@@ -21,8 +21,14 @@ const checkFileTypeHandler = require('./checkFileTypeHandler');
 const slugify              = require('./slugify');
 
 const editItemHandler = (req, res) => {
+    /**
+     * Update event and students to 
+     * ensure that the they are 
+     * up-to-date.
+     */
     event    = reload('../../data/event.json');
     students = reload('../../data/students.json');
+    
 
     /**
      * Create an extension variable 

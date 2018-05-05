@@ -17,7 +17,13 @@ let forms    = require('../../data/forms.json');
 const checkFileTypeHandler = require('../handlers/checkFileTypeHandler');
 
 const editItemHandler = (req, res) => {
-    event = reload('../../data/event.json');
+    /**
+     * Update event and students to 
+     * ensure that the they are 
+     * up-to-date.
+     */
+    event    = reload('../../data/event.json');
+    students = reload('../../data/students.json');
 
     /**
      * Create an extension variable 

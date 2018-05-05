@@ -22,6 +22,14 @@ let students = require('../../data/students.json');
  */
 const deleteItemHandler = (req, res) => {
     /**
+     * Update event and students to 
+     * ensure that the they are 
+     * up-to-date.
+     */
+    event    = reload('../../data/event.json');
+    students = reload('../../data/students.json');
+    
+    /**
      * Return route will be altered 
      * later if a students project is 
      * being deleted.
@@ -146,8 +154,6 @@ const deleteItemHandler = (req, res) => {
         event    = reload('../../data/event.json');
         students = reload('../../data/students.json');
     });
-    
-    
     
     /**
      * Finally, redirect the user to 

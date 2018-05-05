@@ -24,6 +24,14 @@ const slugify              = require('./slugify');
 
 const newItemHandler = (req, res) => {
     /**
+     * Update event and students to 
+     * ensure that the they are 
+     * up-to-date.
+     */
+    event    = reload('../../data/event.json');
+    students = reload('../../data/students.json');
+    
+    /**
      * Create an extension variable 
      * for getting the file extension 
      * for the uploaded image.
@@ -149,6 +157,8 @@ const newItemHandler = (req, res) => {
                     return true;
                 }
             })[0];
+
+            console.log(student);
 
             /**
              * Create an object with all 
