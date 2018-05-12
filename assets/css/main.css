@@ -7629,6 +7629,22 @@ a.text-dark:hover, a.text-dark:focus {
       -webkit-box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
               box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5); }
 
+body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-height: 100vh; }
+
 h1, h2 {
   text-align: center; }
   h1:after, h2:after {
