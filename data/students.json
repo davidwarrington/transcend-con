@@ -79,11 +79,7 @@
                 "description": "A compilation of the work Lewis has produced.",
                 "project_type": "video",
                 "yt": "https://youtu.be/zUNzw4D5Ylk",
-                "slug": "showreel",
-                "image": {
-                    "url": "lewis-singleton/portfolio/showreelundefined",
-                    "alt": "Showreel"
-                }
+                "slug": "showreel"
             },
             {
                 "name": "Couch",

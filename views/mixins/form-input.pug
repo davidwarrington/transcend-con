@@ -59,7 +59,7 @@ mixin form-input(input, obj)
             small.form-text.text-muted= input.description
 
         //- If the input type is file, we create a preview of the current set image.
-        if input.type === 'file' && obj[input.id]
+        if input.type === 'file' && obj[input.id] && obj[input.id].url
             p Current Image:
             - var url = `/assets/img/${obj[input.id].url}`
             img.w-100(src=url, alt=input.alt)
