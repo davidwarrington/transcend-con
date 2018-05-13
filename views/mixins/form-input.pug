@@ -38,7 +38,7 @@ mixin form-input(input, obj)
             //- required because there is already an image 
             //- associated with it.
             - required = required && !obj[input.id].url ? 'required' : false;
-            input.form-control-file(type=input.type name=input.id id=input.id required=required)
+            input.form-control-file(type=input.type name=input.id id=input.id required=required accept="image/*")
             
         else if input.type === 'select'
             select.form-control(type=input.type name=input.id id=input.id value=obj[input.id] required=required)
@@ -70,4 +70,4 @@ mixin form-input(input, obj)
         .form-group
             - var alt_label = `${input.id}_alt`
             label(for=alt_label)= `Image Description`
-            input.form-control(type="text" name=alt_label id=alt_label value=obj[input.id].alt required=required)
+            input.form-control(type="text" name=alt_label id=alt_label value=obj[input.id].alt required=required accept="image/*")
